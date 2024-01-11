@@ -1,0 +1,9 @@
+class WeatherRenderer {
+
+    constructor() {
+        
+    }
+
+   
+}
+
