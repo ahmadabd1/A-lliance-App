@@ -139,21 +139,30 @@ class Board{
         const currentPosition = player.position;
         player.position += steps;
         
-        const snakesAndLadders = {
-            16: 6,
-            47: 26,
-            49: 11,
-            56: 53,
-            62: 19,
-            64: 60,
+        const snakesMap = {
+            16: 8,
+            37: 26,
+            56: 36,
+            74: 60,
             87: 24,
-            93: 73,
             95: 75,
-            98: 78
+            99: 6
+        };
+        const laddersMap = {
+            2: 23,
+            10: 29,
+            15: 34,
+            44: 58,
+            51: 73,
+            78: 84,
+            76: 93
         };
 
-        if (snakesAndLadders[player.position]) {
-            player.position = snakesAndLadders[player.position];
+        if (snakesMap[player.position]) {
+            player.position = snakesMap[player.position];
+        }
+        if (laddersMap[player.position]) {
+            player.position = laddersMap[player.position];
         }
         
         player.position = Math.min(player.position, this.totalCells);
@@ -177,8 +186,8 @@ class Board{
         
         let movement = player.position - currentPosition;
 
-        if (snakesAndLadders[player.position]) {
-            movement = snakesAndLadders[player.position] - currentPosition;
+        if (snakesMap[player.position]) {
+            movement = snakesMap[player.position] - currentPosition;
         }
         
         return movement;
