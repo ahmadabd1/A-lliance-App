@@ -12,6 +12,7 @@ class Board{
         this.totalCells = boardSize * boardSize;
         this.questionsInCells = {};
         this.maxQuestions = 10;
+        // this.gameController = new GameController(this.boardSize)
     }
 
 
@@ -46,7 +47,12 @@ class Board{
                 );
                 $("#square" + element.toString()).css("animation-fill-mode", "forwards");
             });
-            this.players.forEach(player =>  this.updatePlayerPosition(player))
+            this.players.forEach(player =>  {
+                if(player instanceof Dumbot){
+                    this.updateDumbotPosition(player)
+                } 
+                this.updatePlayerPosition(player);
+            })
         }, 1200);
     }
 
@@ -79,23 +85,15 @@ class Board{
         $(".player").remove();
         const newPlayerElement = $('<div class="player"></div>');
         cell.append(newPlayerElement);
-        
-        newPlayerElement.css({
-            top: '50%',
-            left: '50%',
-        });
     }
 
     updateDumbotPosition(player) {
         const currentDumbotCell = $(`#square${player.position}`);
+        console.log(currentDumbotCell)
         $(".dumbot").remove();
         const dumbotElement = $('<div class="dumbot"></div>');
+        console.log(currentDumbotCell)
         currentDumbotCell.append(dumbotElement);
-
-        dumbotElement.css({
-            top: '50%',
-            left: '50%',
-        });
     }
 
     placeQuestionsRandomly() {
@@ -120,11 +118,13 @@ class Board{
     }
     
     async initializeBoard() {
-        this.createBoard();
         this.addPlayer(new Player("Player 1"));
         this.addPlayer(new Dumbot("Dumbot"));
+        this.createBoard();
         this.displayPlayerTurn(this.getCurrentPlayer());
         this.placeQuestionsRandomly();
+        // this.gameController(new GameController(this.boardSize))
+
     }
     
     checkQuestionAndDisplay(player) {
@@ -165,16 +165,13 @@ class Board{
             player.position = laddersMap[player.position];
         }
         
+        // player.position = Math.max(0, this.totalCells);
         player.position = Math.min(player.position, this.totalCells);
 
         if (player instanceof Dumbot)
             this.updateDumbotPosition(player);
         else
             this.updatePlayerPosition(player);
-        
-        if (player.position === this.totalCells) {
-            alert(`Congratulations! ${player.name} has won!`);
-        }
 
         if (player.position < 1) {
             player.position = 1;
@@ -189,11 +186,8 @@ class Board{
         if (snakesMap[player.position]) {
             movement = snakesMap[player.position] - currentPosition;
         }
-        
         return movement;
     }
-    
-
 }
 
 

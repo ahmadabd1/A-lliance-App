@@ -29,12 +29,12 @@ body.dark {
 /* Light Theme */
 body.light {
     background-color: #ffffff;
-    color: #333333; /* Dark text on light background */
+    color: #333333;
 }
 
 body.dark #turn-info,
-body.dark #volumeText,body.dark p, body.dark .fas.fa-volume-up, body.dark .fas.fa-forward, body.dark .fas.fa-play
-{
+body.dark #volumeText,body.dark p, body.dark .fas.fa-volume-up, body.dark .fas.fa-forward, body.dark .fas.fa-play,
+body.dark .fas.fa-volume-mute, body.dark .fas.fa-pause{
     color: #fff;
 }
 #turn-info{
@@ -722,7 +722,7 @@ button:hover {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    /* position: absolute; */
+    padding-bottom: -5vh;
 }
 
 .player {
@@ -734,6 +734,10 @@ button:hover {
 }
 .volume-controls{
     margin-left: 15vh;
+}
+.fa-volume-mute{
+    margin-left: 21.4vh;
+
 }
 .fa-volume-down{
     margin-left: 1vh;
