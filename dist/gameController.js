@@ -25,11 +25,11 @@ class GameController {
             rollDiceButton.off('click').on('click', () => {
                 currentPlayer.rollValue = this.gameBoard.dice.rollDice()
                 rollDice(currentPlayer.rollValue)
-                this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
-                this.gameBoard.displayPlayerTurn(this.gameBoard.getCurrentPlayer())
                 setTimeout(() => {
+                    this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
+                    this.gameBoard.displayPlayerTurn(this.gameBoard.getCurrentPlayer())
                     this.nextTurn();
-                }, 1000);
+                }, 4000);
             });
         } else {
             this.startDumbotTurn()
@@ -39,14 +39,14 @@ class GameController {
     startDumbotTurn() {
         console.log('startDumbotTurn called');
         const currentPlayer = this.gameBoard.getCurrentPlayer();
-        currentPlayer.rollValue = 0;
         currentPlayer.rollValue = this.gameBoard.dice.rollDice()
-        this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
-        this.gameBoard.displayPlayerTurn(currentPlayer)
-
+        rollDice(currentPlayer.rollValue)
+        
         setTimeout(() => {
+            this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
+            this.gameBoard.displayPlayerTurn(currentPlayer)
             this.nextTurn();
-        }, 1000)
+        }, 4000)
     }
     
     nextTurn() {
