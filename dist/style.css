@@ -1,1 +1,386 @@
+/* Theme Style */
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+.theme-container {
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+}
+
+body.dark {
+    background-color: #292c35;
+}
+
+/* #9b59b6 */
+
+body.dark h1,
+body.dark .support a {
+    color: #fff;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.city {
+    font-size: 10px;
+}
+
+.checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+
+/* Board Style */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+:root {
+  --floorPattern: #03819d;
+  --viewType: #b7b7b7;
+  --cameraAngle: 90deg;
+  --animation-Time: 5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: wheat;
+  color: #fff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .container {
+  height: 135vh;
+  width: 135vh;
+  perspective: 600px;
+  perspective-origin: top;
+}
+body .container .floor {
+  transform-style: preserve-3d;
+  -webkit-animation: CameraViewfloor linear calc(var(--animation-Time) * 0.3);
+  animation: CameraViewfloor linear calc(var(--animation-Time) * 0.3);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--floorPattern) 25%, transparent 30%),
+    linear-gradient(225deg, var(--floorPattern) 25%, transparent 30%),
+    linear-gradient(315deg, var(--floorPattern) 25%, transparent 30%),
+    linear-gradient(45deg, var(--floorPattern) 25%, transparent 30%);
+  background-size: 5vw 5vw;
+  box-shadow: inset rgb(0, 0, 0) 0px 0px 55px, inset rgb(0, 0, 0) 0px 0px 515px,
+    inset rgb(0, 0, 0) 0px 0px 155px;
+}
+body .container .floor .players {
+  width: 110vw;
+  height: 90vh;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+body .container .floor .players #player1 {
+  position: absolute;
+  z-index: 10000;
+  width: 3vw;
+  height: 5vw;
+  overflow: hidden;
+  transform: rotateX(-90deg) translateY(-3vw);
+}
+body .container .floor .players #player1 object {
+  width: 100%;
+  height: 100%;
+}
+body .container .floor .cardContainer {
+  width: 60%;
+  height: 60%;
+  border-radius: 2%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+body .container .floor .cardContainer:before {
+  position: absolute;
+  content: "";
+  -webkit-animation: shadowAnimation linear 0.5s;
+  animation: shadowAnimation linear 0.5s;
+  -webkit-animation-delay: calc(var(--animation-Time) * 0.16);
+  animation-delay: calc(var(--animation-Time) * 0.16);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  transform: scale(0);
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(29, 29, 29, 0.8) 60%,
+    transparent,
+    transparent
+  );
+}
+body .container .floor .cardContainer .cardBoard {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #2a2a2a, #000000);
+  border-radius: 2%;
+  position: relative;
+  -webkit-animation: cardBoardAnim calc(var(--animation-Time) * 0.3) linear 0.1s;
+  animation: cardBoardAnim calc(var(--animation-Time) * 0.3) linear 0.1s;
+  transform: scale(0);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  transform-style: preserve-3d;
+}
+body .container .floor .cardContainer .cardBoard::before {
+  transform: translateZ(-4px);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #2a2a2a, #000000);
+  border-radius: 2%;
+}
+body .container .floor .cardContainer .cardBoard .boxes {
+  width: 98%;
+  height: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  background-image: url("Svg/boardItems.svg");
+}
+body .container .floor .cardContainer .cardBoard .boxes svg {
+  position: absolute;
+  transform: translateZ(1px);
+  width: 100%;
+  height: 100%;
+}
+body .container .floor .cardContainer .cardBoard .boxes .square {
+  width: 10%;
+  font-family: cursive;
+  display: flex;
+  color: transparent;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  justify-content: end;
+  align-items: end;
+  font-size: 1vw;
+  padding-right: 2px;
+}
+body .NavBar {
+  position: absolute;
+  top: 10px;
+  width: 60vw;
+  height: 15vw;
+  align-items: baseline;
+}
+body .NavBar div {
+  position: absolute;
+  align-items: baseline;
+  font-size: 24px;
+  color: rgba(180, 180, 180, 0);
+  font-family: Poppins;
+  transform: scale(0);
+  text-shadow: -1px 1px #41ba45, 1px 1px 0 #c63d2b, 1px -1px 0 #42afac,
+    -1px -1px 0 #c6c23f;
+  -webkit-animation: HeaderAnim linear calc(var(--animation-Time) * 0.05);
+  animation: HeaderAnim linear calc(var(--animation-Time) * 0.05);
+  -webkit-animation-delay: calc(var(--animation-Time) * 0.5);
+  animation-delay: calc(var(--animation-Time) * 0.5);
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+svg {
+  filter: drop-shadow(1px 1px 12px 12px black);
+}
+
+.flexBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 908px) {
+  body .container .floor {
+    width: 100vh;
+    height: 100vh;
+  }
+  body .container .floor .cardContainer {
+    width: 65%;
+    height: 65%;
+  }
+  body .container .floor .cardContainer .cardBoard .boxes .square {
+    font-size: 0.5em;
+  }
+}
+@-webkit-keyframes snakeAnimation {
+  0% {
+    transform: translateY(-25px) translateX(250px) skewX(35deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-25px) translateX(0px) skewX(0deg);
+  }
+}
+@keyframes snakeAnimation {
+  0% {
+    transform: translateY(-25px) translateX(250px) skewX(35deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-25px) translateX(0px) skewX(0deg);
+  }
+}
+@-webkit-keyframes HeaderAnim {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes HeaderAnim {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes loadNewGame {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes loadNewGame {
+  0% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@-webkit-keyframes boxAnimation {
+  0% {
+    background-color: rgb(255, 255, 255);
+    color: transparent;
+    transform: translateZ(70px);
+  }
+  100% {
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    transform: translateZ(0px);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0.5px 1px;
+  }
+}
+@keyframes boxAnimation {
+  0% {
+    background-color: rgb(255, 255, 255);
+    color: transparent;
+    transform: translateZ(70px);
+  }
+  100% {
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    transform: translateZ(0px);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 0.5px 1px;
+  }
+}
+@-webkit-keyframes cardBoardAnim {
+  from {
+    transform: translateZ(355px);
+  }
+  to {
+    transform: translateZ(5px);
+  }
+}
+@keyframes cardBoardAnim {
+  from {
+    transform: translateZ(355px);
+  }
+  to {
+    transform: translateZ(5px);
+  }
+}
+@-webkit-keyframes shadowAnimation {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes shadowAnimation {
+  from {
+    transform: scale(0.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes CameraViewfloor {
+  from {
+    transform: rotateY(-90deg) rotateX(var(--cameraAngle));
+  }
+  to {
+    transform: rotateY(0deg) rotateX(var(--cameraAngle));
+  }
+}
+@keyframes CameraViewfloor {
+  from {
+    transform: rotateY(-90deg) rotateX(var(--cameraAngle));
+  }
+  to {
+    transform: rotateY(0deg) rotateX(var(--cameraAngle));
+  }
+} /*# sourceMappingURL=style.css.map */
