@@ -127,7 +127,64 @@ class board{
         this.placeQuestionsRandomly();
     }
     
+    checkQuestionAndDisplay(player) {
+        const currentCell = player.position;
+        if (this.questionsInCells[currentCell]) {
+            this.questionHandler.fetchQuestion();
+        }
+    }
     
+    
+    movePlayer(player, steps) {
+        const currentPosition = player.position;
+        player.position += steps;
+        
+        const snakesAndLadders = {
+            16: 6,
+            47: 26,
+            49: 11,
+            56: 53,
+            62: 19,
+            64: 60,
+            87: 24,
+            93: 73,
+            95: 75,
+            98: 78
+        };
+
+        if (snakesAndLadders[player.position]) {
+            player.position = snakesAndLadders[player.position];
+        }
+        
+        player.position = Math.min(player.position, this.totalCells);
+
+        if (player instanceof Dumbot)
+            this.updateDumbotPosition(player);
+        else
+            this.updatePlayerPosition(player);
+        
+        if (player.position === this.totalCells) {
+            alert(`Congratulations! ${player.name} has won!`);
+        }
+
+        if (player.position < 1) {
+            player.position = 1;
+        }
+        
+        if (player instanceof Player && !(player instanceof Dumbot)) {
+            this.checkQuestionAndDisplay(player);
+        }
+        
+        let movement = player.position - currentPosition;
+
+        if (snakesAndLadders[player.position]) {
+            movement = snakesAndLadders[player.position] - currentPosition;
+        }
+        
+        return movement;
+    }
+    
+
 }
 
 
