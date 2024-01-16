@@ -726,11 +726,15 @@ button:hover {
 }
 
 .player {
-    background-color: red;
+    background-color: transparent;
+    background-image: url('./images/spaceKnight2.png');
+    background-size: cover;
 }
 
 .dumbot {
-    background-color: blue;
+    background-color: transparent;
+    background-image: url('./images/spaceShip.png');
+    background-size: cover;
 }
 .volume-controls{
     margin-left: 15vh;
