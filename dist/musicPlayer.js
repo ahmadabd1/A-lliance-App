@@ -36,7 +36,7 @@ function updateMuteButton() {
 
 function nextTrack() {
   currentTrack = (currentTrack % 3) + 1;
-  backgroundMusic.src = `bgMusic/BGM-${currentTrack}.mp3`;
+  backgroundMusic.src = `../bgMusic/BGM-${currentTrack}.mp3`;
   var wasPlaying = !backgroundMusic.paused;
   backgroundMusic.load();
   backgroundMusic.play();
