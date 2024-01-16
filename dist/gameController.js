@@ -23,8 +23,11 @@ class GameController {
         
         if (currentPlayer instanceof Player && !(currentPlayer instanceof Dumbot)) {
             rollDiceButton.off('click').on('click', () => {
+                
                 currentPlayer.rollValue = this.gameBoard.dice.rollDice()
                 rollDice(currentPlayer.rollValue)
+                diceSound.volume = 1.0;
+                diceSound.play();
                 setTimeout(() => {
                     this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
                     this.gameBoard.displayPlayerTurn(this.gameBoard.getCurrentPlayer())
@@ -41,20 +44,27 @@ class GameController {
         const currentPlayer = this.gameBoard.getCurrentPlayer();
         currentPlayer.rollValue = this.gameBoard.dice.rollDice()
         rollDice(currentPlayer.rollValue)
+
         
+        diceSound.volume = 1.0;
+        diceSound.play();
+        console.log("diceRoll audio working");
+        
+          
         setTimeout(() => {
             this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
             this.gameBoard.displayPlayerTurn(currentPlayer)
             this.nextTurn();
         }, 4000)
     }
-    
+        
     nextTurn() {
         this.gameBoard.currentPlayerIndex = (this.gameBoard.currentPlayerIndex + 1) % this.gameBoard.players.length;
         this.startTurn();
     }
     
 }
+    
 
 const boardSize = 10;
 const gameController = new GameController(boardSize);
