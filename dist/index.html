@@ -5,8 +5,8 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>A-lliance App</title>
-    
-    <link rel="stylesheet" href="musicStyles.css">
+
+    <!-- <link rel="stylesheet" href="musicStyles.css"> -->
 
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
@@ -21,49 +21,86 @@
             <source src="../bgMusic/BGM-1.mp3" type="audio/mp3">
             <source src="../bgMusic/BGM-2.mp3" type="audio/mp3">
             <source src="../bgMusic/BGM-3.mp3" type="audio/mp3">
-          </audio>
+        </audio>
         <div class="music-controls">
-          <label for="volume">Volume:</label>
-          <input type="range" id="volume" name="volume" min="0" max="0.2" step="0.1" value="1" onchange="changeVolume()">
-          <button onclick="toggleMute()" id="muteButton"><i class="fas fa-volume-up"></i></button>
-          <button onclick="nextTrack()" id="nextTrackButton"><i class="fas fa-forward"></i> Next Track</button>
-          <button onclick="togglePlayPause()" id="playPauseButton"><i class="fas fa-play"></i></button>
+            <label id="volumeText" for="volume">Volume up</label><br>
+            <p>Increase the volume of your audio using the slider below.</p><br>
+            <input type="range" id="volume" name="volume" min="0" max="0.2" step="0.1" value="1"
+                onchange="changeVolume()">
+            <button onclick="toggleMute()" id="muteButton"><i class="fas fa-volume-up"></i></button>
+            <button onclick="togglePlayPause()" id="playPauseButton"><i class="fas fa-play"></i></button>
+            <br>
+            <button onclick="nextTrack()" id="nextTrackButton"><i class="fas fa-forward"></i> Next Track</button>
         </div>
-      </div>
-<!-- Music Player -->
+    </div>
 
-    <div id="container">
+    <div class="theme-container">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </div>
 
-        <div class="theme-container">
-            <input type="checkbox" class="checkbox" id="checkbox">
-            <label for="checkbox" class="checkbox-label">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun"></i>
-                <span class="ball"></span>
-            </label>
+    <div class="dice-container">
+        <br><br><br>
+        <div class="dice">
+            <ol class="die-list even-roll" data-roll="1" id="die-1">
+                <li class="die-item" data-side="1">
+                    <span class="dot"></span>
+                </li>
+                <li class="die-item" data-side="2">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </li>
+                <li class="die-item" data-side="3">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </li>
+                <li class="die-item" data-side="4">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </li>
+                <li class="die-item" data-side="5">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </li>
+                <li class="die-item" data-side="6">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </li>
+            </ol>
+
         </div>
+        <button id="roll-dice">Roll Dice</button>
+    </div>
 
-        <div id="game-board">
 
-            <div class="container flexBox">
-                <div class="floor flexBox">
-                    <div class="cardContainer">
-                        <div class="cardBoard flexBox">
-                            <div class="boxes">
-                                <svg viewBox="0 0 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:bx="https://boxy-svg.com">
-                                </svg>
-                            </div>
+    <div id="game-board">
+        <div class="container flexBox">
+            <div class="floor flexBox">
+                <div class="cardContainer">
+                    <div class="cardBoard flexBox">
+                        <div class="boxes">
+                            <svg viewBox="0 0 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:bx="https://boxy-svg.com">
+                            </svg>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="dice-container">
-                <div class="dice"></div>
-                <button id="roll-dice">Roll Dice</button>
         </div>
-    </div>
 
 
 
@@ -71,13 +108,13 @@
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="consts.js"></script>
     <script src="dice.js"></script>
     <script src="player.js"></script>
     <script src="dumbot.js"></script>
     <script src="board.js"></script>
     <script src="musicPlayer.js"></script>
     <script src="event-handlers.js"></script>
-    <script src="gameController.js"></script>
 
 </body>
 
