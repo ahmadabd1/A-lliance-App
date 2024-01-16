@@ -12,9 +12,24 @@
     top: 3vh;
     right: 3vh;
 }
-
+#info-container {
+    z-index: 9;
+    position: fixed;
+    top: 20vh;
+    right: 4vh;
+    color: #c63d2b;
+}
+/* Dark Theme */
 body.dark {
-    background-color: #292c35;
+    background-color: #1a1a1a;
+    color: #ffffff !important; 
+
+}
+
+/* Light Theme */
+body.light {
+    background-color: #ffffff;
+    color: #333333; /* Dark text on light background */
 }
 
 body.dark #turn-info,
@@ -690,37 +705,18 @@ button:hover {
 .music-container {
     z-index: 1;
     position: fixed;
-    top: 2vh;
+    top: 5vh;
     left: 2vh;
 }
 
-
+#turn-info{
+    color: black;   
+    font-family: 'Great Vibes', cursive;
+}
 .music-controls * {
     font-size: 10px;
 }
 
-#muteButton {
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#nextTrackButton {
-    border-radius: 10px;
-    cursor: pointer;
-}
-#volumeText{
-    font-size: 12px;
-    color: #c63d2b;
-}
-
-#playPauseButton {
-    border-radius: 10px;
-    cursor: pointer;
-}
-p{
-    font-size: 12px;
-    color: black;   
-}
 .player,
 .dumbot {
     width: 20px;
@@ -730,14 +726,58 @@ p{
 }
 
 .player {
-    background-color: transparent; 
-    background-image: url('./images/spaceKnight.png'); 
-    background-size: cover; 
+    background-color: red;
 }
-    
-    
-
 
 .dumbot {
     background-color: blue;
+}
+.volume-controls{
+    margin-left: 15vh;
+}
+.fa-volume-down{
+    margin-left: 1vh;
+    color: gray;
+}
+.fa-volume-up{
+    margin-left: 21vh;
+    color: gray;
+}
+.fas.fa-volume-up{
+    color: #111;
+}
+
+#muteButton {
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    background-color: transparent;
+    margin-left: -88px;
+}
+
+#nextTrackButton {
+    border-radius: 10px;
+    cursor: pointer;
+    color: #111;
+    background-color: transparent;
+    margin-left: -15px;
+}
+#volumeText{
+    font-size: 12px;
+    color: black;   
+    font-family: 'Great Vibes', cursive;
+    font-weight: 600;
+    margin-left: 20vh;
+}
+p{
+    font-family: 'Great Vibes', cursive;
+    font-size: 12px;
+    color: black;   
+}
+#playPauseButton {
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #111;
+    margin-left: -15px;
 }
