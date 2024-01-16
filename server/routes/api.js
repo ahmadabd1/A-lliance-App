@@ -1,9 +1,7 @@
 const express = require("express");
-// const saveDb = require("../model/saveDataBase");
 const DataHandling = require("../model/filterData");
 const Questions = require("../model/QuestionsSchema");
 const axios = require("axios");
-// const DB = new saveDb();
 const dataHandling = new DataHandling();
 const router = express.Router();
 router.get("/data", async (req, res) => {
@@ -11,7 +9,8 @@ router.get("/data", async (req, res) => {
     const promise = axios.get(
       "https://opentdb.com/api.php?amount=10&type=multiple"
     );
-    await dataHandling.FilterData(promise, res);
+    const resData = await dataHandling.FilterData(promise);
+    res.send(dataHandling.listData);
   } catch (error) {
     console.error("Error in Fetching Data: ", error);
     res.status(500).send({ error: "Internal Server Error" });
