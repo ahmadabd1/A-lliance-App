@@ -1,4 +1,5 @@
 const rollDiceButton = $('#roll-dice')
+
 class GameController {
     constructor(boardSize) {
         this.boardSize = boardSize;
