@@ -9,8 +9,8 @@
 .theme-container {
     z-index: 9;
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 5;
+    right: 2vh;
 
 }
 
@@ -76,7 +76,8 @@ body.dark .support a {
 :root {
   --floorPattern: #03819d;
   --viewType: #b7b7b7;
-  --cameraAngle: 90deg;
+  /* --cameraAngle: 90deg; */
+  --cameraAngle: 20deg;
   --animation-Time: 5s;
 }
 
@@ -97,8 +98,8 @@ body {
   justify-content: center;
 }
 body .container {
-  height: 135vh;
-  width: 135vh;
+  height: 90vh;
+  width: 90vh;
   perspective: 600px;
   perspective-origin: top;
 }
@@ -137,8 +138,8 @@ body .container .floor .players #player1 object {
   height: 100%;
 }
 body .container .floor .cardContainer {
-  width: 60%;
-  height: 60%;
+  width: 70%;
+  height: 70%;
   border-radius: 2%;
   position: relative;
   transform-style: preserve-3d;
