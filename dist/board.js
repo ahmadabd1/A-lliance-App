@@ -50,7 +50,16 @@ class board{
         }, 1200);
     }
 
-
+    
+    addPlayer(player) {
+        this.players.push(player);
+    }
+    
+    getCurrentPlayer() {
+        return this.players[this.currentPlayerIndex];
+    }
+    
+    
 }
 
 
