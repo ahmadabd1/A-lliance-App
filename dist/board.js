@@ -1,5 +1,5 @@
 
-class board{
+class Board{
     constructor(boardSize) {
         this.players = [];
         this.currentPlayerIndex = 0;
