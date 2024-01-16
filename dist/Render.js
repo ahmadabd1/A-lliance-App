@@ -1,9 +1,17 @@
-class WeatherRenderer {
+class GameRender {
 
     constructor() {
+        
+    }
+    diplayPageOne(){
+
+    }
+    displayPageTow(){
+
+    }
+    displayPageGame(){
         
     }
 
    
 }
-
