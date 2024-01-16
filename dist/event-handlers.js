@@ -1,5 +1,5 @@
-const weatherController = new WeatherController()
-const weatherManager = new WeatherManager()
-const weatherRenderer = new WeatherRenderer()
 
 
+$("#checkbox").on("change", function () {
+    $("body").toggleClass("dark");
+});

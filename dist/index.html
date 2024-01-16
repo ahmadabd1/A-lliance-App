@@ -7,11 +7,44 @@
     <title>A-lliance App</title>
 
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
 </head>
 
 <body>
     <div id="container">
-        <div id="game-board"></div>
+
+        <div class="theme-container">
+            <input type="checkbox" class="checkbox" id="checkbox">
+            <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="ball"></span>
+            </label>
+        </div>
+
+        <div id="game-board">
+
+            <div class="container flexBox">
+                <div class="floor flexBox">
+                    <div class="cardContainer">
+                        <div class="cardBoard flexBox">
+                            <div class="boxes">
+                                <svg viewBox="0 0 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:bx="https://boxy-svg.com">
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dice-container">
+                <div class="dice"></div>
+                <button id="roll-dice">Roll Dice</button>
+        </div>
     </div>
 
 
@@ -21,11 +54,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="consts.js"></script>
+<<<<<<< HEAD
     <script src="dice.js"></script>
     <script src="player.js"></script>
     <script src="dumbot.js"></script>
     <script src="board.js"></script>
     
+=======
+    <script src="event-handlers.js"></script>
+
+>>>>>>> Rawaby
 </body>
 
 </html>
