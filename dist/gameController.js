@@ -44,7 +44,6 @@ class GameController {
 
         setTimeout(() => {
             this.nextTurn();
-            // rollDiceButton.prop("disabled", false);
         }, 1000)
     }
     
