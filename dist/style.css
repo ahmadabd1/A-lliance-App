@@ -385,3 +385,19 @@ svg {
     transform: rotateY(0deg) rotateX(var(--cameraAngle));
   }
 } /*# sourceMappingURL=style.css.map */
+
+.player,
+.dumbot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* position: absolute; */
+}
+
+.player {
+    background-color: red;
+}
+
+.dumbot {
+    background-color: blue;
+}

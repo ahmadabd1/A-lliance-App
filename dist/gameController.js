@@ -1,3 +1,4 @@
+const rollDiceButton = $('#roll-dice')
 class GameController {
     constructor(boardSize) {
         this.boardSize = boardSize;
@@ -6,7 +7,7 @@ class GameController {
 
     start() {
         this.gameBoard.initializeBoard();
-        this.gameBoard.startGame();
+        this.startGame();
     }
 
     startGame() {
@@ -48,7 +49,7 @@ class GameController {
     }
     
     nextTurn() {
-        this.gameBoard.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.players.length;
+        this.gameBoard.currentPlayerIndex = (this.gameBoard.currentPlayerIndex + 1) % this.gameBoard.players.length;
         this.startTurn();
     }
     
