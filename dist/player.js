@@ -19,10 +19,13 @@ class Player{
     }
 
     move(steps) {
-        this.position += steps;
+        this._position += steps;
     }
 
     getPosition() {
-        return this.position;
+        return this._position;
+    }
+    getId(){
+        return this._id
     }
 }
