@@ -1,0 +1,31 @@
+/* Add your CSS styles here */
+.music-container {
+    width: 300px;
+    margin: 20px;
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .music-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  #backgroundMusic {
+    display: none;
+  }
+  
+  #muteButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  #muteButton img {
+    width: 20px;
+    height: 20px;
+  }
+  
