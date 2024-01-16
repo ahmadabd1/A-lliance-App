@@ -16,6 +16,7 @@ db.once("open", () => {
 });
 
 app.use(express.static(path.join(__dirname, "./dist")));
+// app.use(express.static(path.join(__dirname, "./bgMusic")));
 app.use(express.static(path.join(__dirname, "node_modules")));
 
 app.use(express.json());

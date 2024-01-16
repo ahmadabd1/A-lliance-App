@@ -4,7 +4,7 @@ var nextTrackButton = document.getElementById("nextTrackButton");
 var playPauseButton = document.getElementById("playPauseButton");
 var isMuted = false;
 var isPlaying = false;
-var currentTrack = 1; 
+var currentTrack = 1;
 
 document.addEventListener("DOMContentLoaded", function () {
   var initialVolume = 0.1;
@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
   backgroundMusic.volume = initialVolume;
 });
 
-backgroundMusic.addEventListener('canplay', function() {
-  console.log('Audio can play.');
+backgroundMusic.addEventListener("canplay", function () {
+  console.log("Audio can play.");
 });
 
 function changeVolume() {
@@ -36,7 +36,7 @@ function updateMuteButton() {
 
 function nextTrack() {
   currentTrack = (currentTrack % 3) + 1;
-  backgroundMusic.src = `../bgMusic/BGM-${currentTrack}.mp3`;
+  backgroundMusic.src = `./bgMusic/BGM-${currentTrack}.mp3`;
   var wasPlaying = !backgroundMusic.paused;
   backgroundMusic.load();
   backgroundMusic.play();
@@ -60,25 +60,3 @@ function updatePlayPauseButton() {
   var playPauseIcon = isPlaying ? "fa-pause" : "fa-play";
   playPauseButton.innerHTML = `<i class="fas ${playPauseIcon}"></i>`;
 }
-    
-  
-    
-   
-    
-    
-    
-  
-  
-
-    
-
-
-  
-   
-  
-    
-  
-    
-    
-    
-
