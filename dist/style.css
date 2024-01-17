@@ -15,8 +15,12 @@
 
 .black-hole-img {
     width: 120px;
-    height: 20px;
-    background-color: black;
+    height: 20px; /* Adjust the height to match the aspect ratio of your image */
+    background-image: url('./images/blackHole.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover; /* Adjust the background size as needed */
+    background-color: #000000;
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
     border-radius: 50%;
     margin: 5px;
 }
