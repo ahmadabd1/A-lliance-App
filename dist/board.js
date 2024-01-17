@@ -4,14 +4,14 @@ class Board{
         this.players = [];
         this.currentPlayerIndex = 0;
        // this.apiManager = new ApiManager();
-       // this.questionHandler = new QuestionHandler(this.apiManager, this);
+        this.questionHandler = new QuestionHandler(this);
         this.dice = new Dice();
         this.dumbot = new Dumbot("DumBot");
         this.player = new Player("Naarani");
         this.boardSize = boardSize;
         this.totalCells = boardSize * boardSize;
         this.questionsInCells = {};
-        this.maxQuestions = 10;
+        this.maxQuestions = 20;
         // this.gameController = new GameController(this.boardSize)
     }
 
@@ -35,9 +35,9 @@ class Board{
                 $(
                     "<div class='square' id='square" +
                     element.toString() +
-                    "'><div>" +
+                    "'><div id='q" +
                     element +
-                    "<div/><div/>"
+                    "'>"+element+"<div/><div/>"
                 ).appendTo(".cardBoard .boxes");
 
                 $("#square" + element.toString()).css("animation", ".3s boxAnimation");
@@ -89,16 +89,29 @@ class Board{
 
     updateDumbotPosition(player) {
         const currentDumbotCell = $(`#square${player.position}`);
-        console.log(currentDumbotCell)
+        //console.log(currentDumbotCell)
         $(".dumbot").remove();
         const dumbotElement = $('<div class="dumbot"></div>');
-        console.log(currentDumbotCell)
+        //console.log(currentDumbotCell)
         currentDumbotCell.append(dumbotElement);
+    }
+
+    colorQuestionCell(cell) {
+        const currentCell = $(`.q${cell}`);
+        $(".q"+cell).css({
+            'opacity': '1',
+            'width': '50px',
+            'height': '50px',
+            'background-color': 'red'
+        });
+
     }
 
     placeQuestionsRandomly() {
         for (let i = 0; i < this.maxQuestions; i++) {
             const randomCell = this.getRandomEmptyCell();
+            console.log(randomCell)
+            $('#q8').css("background-color" , "red")
             if (randomCell) {
                 this.questionsInCells[randomCell] = true;
             }
