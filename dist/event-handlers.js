@@ -1,5 +1,6 @@
 $("#checkbox").on("change", function () {
     $("body").toggleClass("dark");
+    $("body").toggleClass("light");
 });
 
 async function rollDice(number) {
