@@ -21,8 +21,8 @@ class Board {
     constructor(boardSize) {
         this.players = [];
         this.currentPlayerIndex = 0;
-        // this.apiManager = new ApiManager();
-        // this.questionHandler = new QuestionHandler(this.apiManager, this);
+       // this.apiManager = new ApiManager();
+        this.questionHandler = new QuestionHandler(this);
         this.dice = new Dice();
         this.dumbot = new Dumbot("DumBot");
         this.player = new Player("Naarani");
@@ -123,10 +123,20 @@ class Board {
 
     updateDumbotPosition(player) {
         const currentDumbotCell = $(`#square${player.position}`);
-        console.log(currentDumbotCell)
         $(".dumbot").remove();
         const dumbotElement = $('<div class="dumbot"></div>');
         currentDumbotCell.append(dumbotElement);
+    }
+
+    colorQuestionCell(cell) {
+        const currentCell = $(`.q${cell}`);
+        $(".q"+cell).css({
+            'opacity': '1',
+            'width': '50px',
+            'height': '50px',
+            'background-color': 'red'
+        });
+
     }
 
     placeQuestionsRandomly() {
@@ -139,6 +149,13 @@ class Board {
                 const cell = $(`#square${randomCellId}`);
                 cell.append(questionIcon);
                 this.questionsInCells[randomCellId] = true;
+                this.questionsInCells[2] = true;
+                this.questionsInCells[3] = true;
+                this.questionsInCells[4] = true;
+                this.questionsInCells[5] = true;
+                this.questionsInCells[6] = true;
+                this.questionsInCells[6] = true;
+                this.questionsInCells[7] = true;
             }
         }
     }
