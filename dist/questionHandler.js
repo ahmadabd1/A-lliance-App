@@ -38,11 +38,11 @@ class QuestionHandler {
 
         let steps;
 
-        if (userAnswer === this.currentQuestion.correct_answer) {
+        if (userAnswer == this.currentQuestion[0].correct_answer) {
             alert("Woohoo! Correct answer! You can now proceed by 5 step.");
             steps = 5;
         } else {
-            alert("Oops! Incorrect answer! You will now move back 10 steps.");
+            alert("Oops! Incorrect answer! the correct answer is:-"+this.currentQuestion[0].correct_answer+" You will now move back 10 steps.");
             steps = -10;
         }
 
