@@ -1,9 +1,10 @@
-const rollDiceButton = $('#roll-dice')
+const rollDiceButton = $()
 
 class GameController {
     constructor(boardSize) {
         this.boardSize = boardSize;
         this.gameBoard = new Board(this.boardSize);
+        this.initializeEventListener();
     }
 
     start() {
@@ -12,49 +13,68 @@ class GameController {
     }
 
     startGame() {
-        this.startTurn();
+        // this.startTurn();
     }
     
     startTurn() {
-        console.log('startTurn called');
-        const currentPlayer = this.gameBoard.getCurrentPlayer()
-        this.gameBoard.displayPlayerTurn(currentPlayer)
-        currentPlayer.rollValue = 0
-        
-        if (currentPlayer instanceof Player && !(currentPlayer instanceof Dumbot)) {
-            rollDiceButton.off('click').on('click', () => {
-                currentPlayer.rollValue = this.gameBoard.dice.rollDice()
-                rollDice(currentPlayer.rollValue)
-                this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
-                this.gameBoard.displayPlayerTurn(this.gameBoard.getCurrentPlayer())
-                setTimeout(() => {
-                    this.nextTurn();
-                }, 1000);
-            });
-        } else {
-            this.startDumbotTurn()
-        }
-    }
-
-    startDumbotTurn() {
-        console.log('startDumbotTurn called');
         const currentPlayer = this.gameBoard.getCurrentPlayer();
-        currentPlayer.rollValue = 0;
-        currentPlayer.rollValue = this.gameBoard.dice.rollDice()
-        this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
-        this.gameBoard.displayPlayerTurn(currentPlayer)
 
-        setTimeout(() => {
-            this.nextTurn();
-        }, 1000)
+        console.log('startTurn called');
+        if (currentPlayer instanceof Dumbot) {
+            console.log('startDumbotTurn called');
+        }
+
+        this.gameBoard.displayPlayerTurn(currentPlayer);
+        currentPlayer.rollValue = this.gameBoard.dice.rollDice();
+        rollDice(currentPlayer.rollValue);
+        diceSound.volume = 1.0;
+        diceSound.play();
+        console.log("diceRoll audio working");
+
+        
+        setTimeout(async () => {
+            this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
+            this.gameBoard.displayPlayerTurn(currentPlayer)
+
+            if (currentPlayer.position === this.gameBoard.totalCells) {
+                setTimeout(() => {
+                    alert(`Congratulations! ${currentPlayer.name} has won!`);
+                    this.resetGame();
+                }, 50);
+                return;
+            }
+
+            this.changePlayerTurn();
+            if(!(currentPlayer instanceof Dumbot)) {
+                this.nextTurn();
+            }
+        }, 4000)
     }
-    
+
+    initializeEventListener() {
+        $("body").on('click', '#roll-dice', () => {
+            this.startTurn();
+        });
+    }
+
     nextTurn() {
-        this.gameBoard.currentPlayerIndex = (this.gameBoard.currentPlayerIndex + 1) % this.gameBoard.players.length;
         this.startTurn();
     }
     
+    changePlayerTurn() {
+        this.gameBoard.currentPlayerIndex = (this.gameBoard.currentPlayerIndex + 1) % this.gameBoard.players.length;
+    }
+
+    resetGame() {
+        this.gameBoard.players.forEach(player => {
+            player.position = 1;
+            player.rollValue = 0;
+            this.gameBoard.displayPlayerTurn(player);
+        })
+        this.currentPlayerIndex = 0;
+    }
 }
+    
 
 const boardSize = 10;
 const gameController = new GameController(boardSize);

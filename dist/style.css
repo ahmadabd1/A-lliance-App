@@ -9,21 +9,37 @@
 .theme-container {
     z-index: 9;
     position: fixed;
-    top: 5vh;
-    right: 2vh;
+    top: 3vh;
+    right: 3vh;
 }
-
+#info-container {
+    z-index: 9;
+    position: fixed;
+    top: 20vh;
+    right: 4vh;
+    color: #c63d2b;
+}
+/* Dark Theme */
 body.dark {
-    background-color: #292c35;
+    background-color: #1a1a1a;
+    color: #ffffff !important; 
+
 }
 
-/* #9b59b6 */
+/* Light Theme */
+body.light {
+    background-color: #ffffff;
+    color: #333333;
+}
 
-body.dark h1,
-body.dark .support a {
+body.dark #turn-info,
+body.dark #volumeText,body.dark p, body.dark .fas.fa-volume-up, body.dark .fas.fa-forward, body.dark .fas.fa-play,
+body.dark .fas.fa-volume-mute, body.dark .fas.fa-pause{
     color: #fff;
 }
-
+#turn-info{
+    font-weight: 900;
+}
 .checkbox {
     opacity: 0;
     position: absolute;
@@ -68,7 +84,15 @@ body.dark .support a {
 .checkbox:checked+.checkbox-label .ball {
     transform: translateX(24px);
 }
-
+#roll-dice{
+    border-radius: 30px;
+    margin-top: -10px;
+   margin-left: -10vh;
+    color: black;   
+    font-family: 'Great Vibes', cursive;
+    width: 40vh;
+    background-color: grey
+}
 
 /* Board Styling */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
@@ -444,6 +468,8 @@ html {
     position: fixed;
     top: 25vh;
     right: 2vh;
+    width: 30vh;
+    height: 30vh;
 }
 
 .dice {
@@ -476,7 +502,7 @@ html {
 }
 
 .die-item {
-    background-color: gray;
+    background-color: rgb(201, 39, 39);
     box-shadow: inset -0.35rem 0.35rem 0.75rem rgba(0, 0, 0, 0.3),
         inset 0.5rem -0.25rem 0.5rem rgba(0, 0, 0, 0.15);
     display: grid;
@@ -495,7 +521,7 @@ html {
 
 .dot {
     align-self: center;
-    background-color: black;
+    background-color: white;
     border-radius: 50%;
     box-shadow: inset -0.15rem 0.15rem 0.25rem rgba(0, 0, 0, 0.5);
     display: block;
@@ -679,52 +705,87 @@ button:hover {
 .music-container {
     z-index: 1;
     position: fixed;
-    top: 2vh;
+    top: 5vh;
     left: 2vh;
 }
 
-.music-controls {
-    font-size: 10px;
+#turn-info{
+    color: black;   
+    font-family: 'Great Vibes', cursive;
 }
-
 .music-controls * {
     font-size: 10px;
 }
 
-#muteButton {
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-#nextTrackButton {
-    border-radius: 10px;
-    cursor: pointer;
-}
-#volumeText{
-    font-size: 12px;
-    color: #c63d2b;
-}
-
-#playPauseButton {
-    border-radius: 10px;
-    cursor: pointer;
-}
-p{
-    font-size: 12px;
-    color: black;   
-}
 .player,
 .dumbot {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    /* position: absolute; */
+    padding-bottom: -5vh;
 }
 
 .player {
-    background-color: red;
+    background-color: transparent;
+    background-image: url('./images/spaceKnight2.png');
+    background-size: cover;
 }
 
 .dumbot {
-    background-color: blue;
+    background-color: transparent;
+    background-image: url('./images/spaceShip.png');
+    background-size: cover;
+}
+.volume-controls{
+    margin-left: 15vh;
+}
+.fa-volume-mute{
+    margin-left: 21.4vh;
+
+}
+.fa-volume-down{
+    margin-left: 1vh;
+    color: gray;
+}
+.fa-volume-up{
+    margin-left: 21vh;
+    color: gray;
+}
+.fas.fa-volume-up{
+    color: #111;
+}
+
+#muteButton {
+    border-radius: 10px;
+    cursor: pointer;
+    color: black;
+    background-color: transparent;
+    margin-left: -88px;
+}
+
+#nextTrackButton {
+    border-radius: 10px;
+    cursor: pointer;
+    color: #111;
+    background-color: transparent;
+    margin-left: -15px;
+}
+#volumeText{
+    font-size: 12px;
+    color: black;   
+    font-family: 'Great Vibes', cursive;
+    font-weight: 600;
+    margin-left: 20vh;
+}
+p{
+    font-family: 'Great Vibes', cursive;
+    font-size: 12px;
+    color: black;   
+}
+#playPauseButton {
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    color: #111;
+    margin-left: -15px;
 }

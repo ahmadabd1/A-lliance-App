@@ -12,6 +12,7 @@ class Board{
         this.totalCells = boardSize * boardSize;
         this.questionsInCells = {};
         this.maxQuestions = 10;
+        // this.gameController = new GameController(this.boardSize)
     }
 
 
@@ -46,7 +47,12 @@ class Board{
                 );
                 $("#square" + element.toString()).css("animation-fill-mode", "forwards");
             });
-            this.players.forEach(player =>  this.updatePlayerPosition(player))
+            this.players.forEach(player =>  {
+                if(player instanceof Dumbot){
+                    this.updateDumbotPosition(player)
+                } 
+                this.updatePlayerPosition(player);
+            })
         }, 1200);
     }
 
@@ -79,23 +85,15 @@ class Board{
         $(".player").remove();
         const newPlayerElement = $('<div class="player"></div>');
         cell.append(newPlayerElement);
-        
-        newPlayerElement.css({
-            top: '50%',
-            left: '50%',
-        });
     }
 
     updateDumbotPosition(player) {
         const currentDumbotCell = $(`#square${player.position}`);
+        console.log(currentDumbotCell)
         $(".dumbot").remove();
         const dumbotElement = $('<div class="dumbot"></div>');
+        console.log(currentDumbotCell)
         currentDumbotCell.append(dumbotElement);
-
-        dumbotElement.css({
-            top: '50%',
-            left: '50%',
-        });
     }
 
     placeQuestionsRandomly() {
@@ -120,11 +118,13 @@ class Board{
     }
     
     async initializeBoard() {
-        this.createBoard();
         this.addPlayer(new Player("Player 1"));
         this.addPlayer(new Dumbot("Dumbot"));
+        this.createBoard();
         this.displayPlayerTurn(this.getCurrentPlayer());
         this.placeQuestionsRandomly();
+        // this.gameController(new GameController(this.boardSize))
+
     }
     
     checkQuestionAndDisplay(player) {
@@ -139,33 +139,39 @@ class Board{
         const currentPosition = player.position;
         player.position += steps;
         
-        const snakesAndLadders = {
-            16: 6,
-            47: 26,
-            49: 11,
-            56: 53,
-            62: 19,
-            64: 60,
+        const snakesMap = {
+            16: 8,
+            37: 26,
+            56: 36,
+            74: 60,
             87: 24,
-            93: 73,
             95: 75,
-            98: 78
+            99: 6
+        };
+        const laddersMap = {
+            2: 23,
+            10: 29,
+            15: 34,
+            44: 58,
+            51: 73,
+            78: 84,
+            76: 93
         };
 
-        if (snakesAndLadders[player.position]) {
-            player.position = snakesAndLadders[player.position];
+        if (snakesMap[player.position]) {
+            player.position = snakesMap[player.position];
+        }
+        if (laddersMap[player.position]) {
+            player.position = laddersMap[player.position];
         }
         
+        // player.position = Math.max(0, this.totalCells);
         player.position = Math.min(player.position, this.totalCells);
 
         if (player instanceof Dumbot)
             this.updateDumbotPosition(player);
         else
             this.updatePlayerPosition(player);
-        
-        if (player.position === this.totalCells) {
-            alert(`Congratulations! ${player.name} has won!`);
-        }
 
         if (player.position < 1) {
             player.position = 1;
@@ -177,14 +183,11 @@ class Board{
         
         let movement = player.position - currentPosition;
 
-        if (snakesAndLadders[player.position]) {
-            movement = snakesAndLadders[player.position] - currentPosition;
+        if (snakesMap[player.position]) {
+            movement = snakesMap[player.position] - currentPosition;
         }
-        
         return movement;
     }
-    
-
 }
 
 
