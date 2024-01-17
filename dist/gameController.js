@@ -42,21 +42,27 @@ class GameController {
     startDumbotTurn() {
         console.log('startDumbotTurn called');
         const currentPlayer = this.gameBoard.getCurrentPlayer();
-        currentPlayer.rollValue = this.gameBoard.dice.rollDice()
-        rollDice(currentPlayer.rollValue)
-
-        
+        currentPlayer.rollValue = this.gameBoard.dice.rollDice();
+        rollDice(currentPlayer.rollValue);
+    
         diceSound.volume = 1.0;
         diceSound.play();
         console.log("diceRoll audio working");
-        
-          
+    
         setTimeout(() => {
-            this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
-            this.gameBoard.displayPlayerTurn(currentPlayer)
+            
+            spaceShipSound.volume = 1.0;
+            spaceShipSound.play();
+            console.log("spaceShipSound audio working");
+        }, 4000); 
+    
+        setTimeout(() => {
+            this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue);
+            this.gameBoard.displayPlayerTurn(currentPlayer);
             this.nextTurn();
-        }, 4000)
+        }, 4000); 
     }
+    
         
     nextTurn() {
         this.gameBoard.currentPlayerIndex = (this.gameBoard.currentPlayerIndex + 1) % this.gameBoard.players.length;
