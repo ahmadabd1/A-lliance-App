@@ -31,11 +31,11 @@ class GameController {
         diceSound.play();
         console.log("diceRoll audio working");
 
-        
+        this.gameBoard.turnNumber++
+
         setTimeout(async () => {
             this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
             this.gameBoard.displayPlayerTurn(currentPlayer)
-
             if (currentPlayer.position === this.gameBoard.totalCells) {
                 setTimeout(() => {
                     alert(`Congratulations! ${currentPlayer.name} has won!`);
