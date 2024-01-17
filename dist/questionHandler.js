@@ -17,7 +17,6 @@ class QuestionHandler {
         }
     }
 
-
     modalPopUP(){
         
             const currentPlayer = this.board.getCurrentPlayer();
@@ -37,14 +36,11 @@ class QuestionHandler {
                 $(".answer"+i).text(answerOptions[i-1])
                
             }
-
             //get the <span> elemnt to closes the modal
             var span = $(".close");
-
             //when the user clicks on the button, open the model
             //replace this with your trigger event
             modal.show()
-
             //when the user clicks on <span> (x), closes the model
             span.on("click", function(event){
                     modal.hide();
@@ -58,29 +54,19 @@ class QuestionHandler {
                 $('input[type=checkbox]:checked').each(function(){
                     selectedOptions.push($(this).next().text());
                 });
-                // Do something with the selected options
-                console.log(selectedOptions)
-                console.log(typeof selectedOptions[0])
-                console.log(selectedOptions[0])
-                console.log(typeof CorrectAnswer)
-                console.log(CorrectAnswer)
-
-                if (selectedOptions[0] == CorrectAnswer) {
+                console.log("iam the select :",selectedOptions)
+                console.log("iam the corecct answer :" ,CorrectAnswer)
+                if (selectedOptions[1] == CorrectAnswer) {
                     questoionHandler.numsteps = 5;
-                   
                     alert("Woohoo! Correct answer! You can now proceed by 5 step.");
                 } else {
                     questoionHandler.numsteps = -10;
-                    
-                    alert("Oops! Incorrect answer! the correct answer is:-"+CorrectAnswer+" You will now move back 10 steps.");
+                    alert("Oops! Incorrect answer! the correct answer is: "+CorrectAnswer+" You will now move back 10 steps.");
                 }
-                console.log("steps inside:",questoionHandler.numsteps)
-                console.log("player-inside:",questoionHandler.player)
-                    modal.hide();// Close the modal after submission
+                    modal.hide();
                     questoionHandler.board.movePlayer( questoionHandler.board.players[0], questoionHandler.numsteps);
             });
-            console.log("steps:",questoionHandler.numsteps)
-            console.log("player:",questoionHandler.player)
+          
             
             
 

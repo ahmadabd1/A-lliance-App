@@ -13,60 +13,127 @@
     right: 3vh;
 }
 
-#info-container {
+#submit {
+    position: flex;
+    /* top:50%; */
+    background-color:#0a0a23;
+    color: #fff;
+    border:none;
+    border-radius:20px;
+    box-shadow: 0px 0px 2px 2px rgb(0,0,0);
+    float: right;
+}
+
+.square .black-hole-img {
+    /* z-index: 9; */
+    width: 97%;
+    height: 6.4vh;
+    background-image: url('./images/blackHole.png');
+    background-size: cover;
+    background-color: #000000;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* border-radius: 50%; */
+    margin-top: -1vh;
+    margin-right: -0.5vh;
+    position: absolute;
+}
+
+.worm-hole-img {
+    width: 120px;
+    height: 20px;
+    background-color: brown;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+/* #info-container {
     z-index: 9;
     position: fixed;
-    top: 20vh;
+    top: 12vh;
     right: 4vh;
-    color: #c63d2b;
+    display: flex;
+    text-align: center;
+    background-color: #545754;
+    opacity: 0.1;
+    border-radius: 7px;
+} */
+#info-container {
+    z-index: 9;
+    background-color: rgba(51, 51, 51, 0.5);
+    /* Dark gray with 80% opacity */
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    top: 14vh;
+    right: 13vh;
 }
 
+#welcome-container h1 {
+    font-size: 2em;
+    font-family: 'Bungee';
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Dark Theme */
 body.dark {
-    background-color: #1a1a1a;
-    color: #ffffff !important;
+    background-image: url('./images/spaceBG.jpg');
+    background-size: cover;
 
 }
 
+/* Light Theme */
 body.light {
-    background-color: #ffffff;
-    color: #333333;
+    background-image: url('./images/dayBG.jpg');
+    background-size: cover;
 }
 
 body.dark #turn-info,
 body.dark #volumeText,
-body.dark p,
+body.dark #turn-number,
+body.dark #turn-player,
+body.dark #adjust {
+    /* color: greenyellow; */
+    color: #eca29c;
+
+}
+
 body.dark .fas.fa-volume-up,
 body.dark .fas.fa-forward,
-body.dark .fas.fa-play,
-body.dark .fas.fa-volume-mute,
-body.dark #turn-player,
-body.dark #turn-number,
-body.dark .fas.fa-pause {
+body.dark .fas.fa-play {
     color: #fff;
+
 }
 
-.question-icon {
-    width: 20px;
-    height: 20px;
-    background-color: #ffcc00;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 20px;
-    font-size: 14px; 
-    color: #333;
-    font-weight: bold;
-    position: relative;
-    margin: auto;
-}
+#turn-info {
+    font-family: 'Bungee';
+    font-size: 22px;
+    font-weight: 900;
 
-.question-icon::before {
-    content: "?";
 }
-
 
 .checkbox {
     opacity: 0;
     position: absolute;
+}
+
+#turn-player {
+    font-family: 'Bungee';
+    font-size: 16px;
+    margin-top: -4vh;
+    color: #fff;
+
+}
+
+#turn-number {
+    color: #fff;
+    font-family: 'Bungee';
+    font-size: 22px;
 }
 
 .city {
@@ -112,16 +179,20 @@ body.dark .fas.fa-pause {
 #roll-dice {
     border-radius: 30px;
     margin-top: -10px;
-    margin-left: -10vh;
+    margin-left: -18vh;
     color: black;
-    font-family: 'Great Vibes', cursive;
-    width: 30vh;
-    font-size: 15px;
+    font-family: 'Bungee';
+    font-size: 22px;
+    width: 40vh;
     background-color: grey
 }
 
 /* Board Styling */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+#game-board {
+    margin-left: 60vh;
+}
 
 :root {
     --floorPattern: #03819d;
@@ -150,7 +221,7 @@ body {
 
 body .container {
     height: 90vh;
-    width: 40vw;
+    width: 90vh;
     perspective: 600px;
     perspective-origin: top;
 }
@@ -243,6 +314,7 @@ body .container .floor .cardContainer .cardBoard::before {
 }
 
 body .container .floor .cardContainer .cardBoard .boxes {
+
     width: 98%;
     height: 98%;
     display: flex;
@@ -493,7 +565,7 @@ html {
     z-index: 9;
     position: fixed;
     top: 25vh;
-    right: 2vh;
+    right: 3vh;
     width: 30vh;
     height: 30vh;
 }
@@ -501,11 +573,12 @@ html {
 .dice {
     justify-content: center;
     display: grid;
-    grid-gap: 2rem;
+    /* grid-gap: 2rem; */
     /* grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr)); */
     /* grid-template-rows: auto; */
     /* justify-items: center; */
     /* padding: 2rem; */
+    right: 5vh;
     perspective: 600px;
 }
 
@@ -517,8 +590,8 @@ html {
     list-style-type: none;
     transform-style: preserve-3d;
     width: 6rem;
-    margin-right: 35px;
-    margin-bottom: -20px;
+    margin-right: 15vh;
+
 }
 
 .even-roll {
@@ -751,7 +824,7 @@ button:hover {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    padding-bottom: -5vh;
+    /* position: absolute; */
 }
 
 .player {
@@ -770,11 +843,6 @@ button:hover {
     margin-left: 15vh;
 }
 
-.fa-volume-mute {
-    margin-left: 21.4vh;
-
-}
-
 .fa-volume-down {
     margin-left: 1vh;
     color: gray;
@@ -786,13 +854,13 @@ button:hover {
 }
 
 .fas.fa-volume-up {
-    color: #111;
+    color: white;
 }
 
 #muteButton {
     border-radius: 10px;
     cursor: pointer;
-    color: black;
+    color: white;
     background-color: transparent;
     margin-left: -88px;
 }
@@ -800,14 +868,19 @@ button:hover {
 #nextTrackButton {
     border-radius: 10px;
     cursor: pointer;
-    color: #111;
+    color: white;
     background-color: transparent;
     margin-left: -15px;
 }
-
+h2{
+    font-family: 'Great Vibes', cursive;
+}
+#optionsForm{
+    font-family: 'Great Vibes', cursive;
+}
 #volumeText {
     font-size: 12px;
-    color: black;
+    color: white;
     font-family: 'Great Vibes', cursive;
     font-weight: 600;
     margin-left: 20vh;
@@ -816,185 +889,223 @@ button:hover {
 p {
     font-family: 'Great Vibes', cursive;
     font-size: 12px;
-    color: black;
+    color: #fff;
 }
 
 #playPauseButton {
     border-radius: 10px;
     cursor: pointer;
     background-color: transparent;
-    color: #111;
+    color: #fff;
     margin-left: -15px;
 }
 
-#turn-info {
-    display: flex;
+.fa-volume-mute {
+    margin-left: 21vh;
+}
+
+/*  */
+.mainMenu {
     text-align: center;
-    margin-right: 10vh;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    display: block;
 }
 
-#turn-number {
-    font-weight: 900;
-    font-size: 20px;
+.introMenu {
+    text-align: center;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    display: block;
 }
 
-#turn-player {
-    color: black;
+#starting-menu,
+#intro-page,
+#game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+#starting-menu {
+    opacity: 1;
+    background-image: url('./images/spaceBG.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+#intro-page,
+#game-container {
+    opacity: 0;
+    display: none;
+}
+
+#starting-menu.active {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#intro-page.active,
+#game-container.active {
+    opacity: 1;
+    display: block;
+}
+
+
+
+#start-button,
+#continue-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Bungee';
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #545754;
+    border: 2px solid #545754;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#start-button:hover,
+#continue-button:hover {
+    background-color: #444;
+    /* Adjust the color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%) scale(1.05);
+    /* Add a slight scale on hover */
+}
+
+
+#backgroundCanvasMenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('./images/footman.gif');
+    background-size: cover;
+}
+
+#backgroundCanvasIntro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('./images/IntroVideo.mp4');
+    background-size: cover;
+}
+
+#backgroundVideoIntro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* This ensures the video covers the whole screen */
+    z-index: -1;
+}
+
+/* Video Style Welcome Message */
+
+
+#welcome-container {
+    background-color: rgba(51, 51, 51, 0.5);
+    /* Dark gray with 80% opacity */
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#welcome-container h1 {
+    font-size: 2em;
+    font-family: 'Bungee';
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#welcome-container p {
+    font-size: 1.2em;
+    font-family: 'Bungee';
+    font-size: 22px;
+    margin: 0;
+}
+
+.question-icon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:transparent;
+    /* border-radius: 50%; */
+    text-align: center;
+    line-height: 20px;
     font-size: 14px;
-    margin-top: -17px;
+    color: rgb(0, 76, 254);
+    font-weight: bold;
+    justify-content: center;
+    padding-top: 30%;
 }
 
-
-@media only screen and (max-width: 600px) {
-    body .container{
-        width: 90vw;
-    }
-    .music-container {
-        top: 2vh;
-        left: 2vh;
-    }
-
-    .music-controls * {
-        font-size: 8px;
-    }
-
-    .player,
-    .dumbot {
-        width: 15px;
-        height: 15px;
-    }
-
-    .volume-controls {
-        margin-left: 5vh;
-    }
-
-    .fa-volume-mute {
-        margin-left: 10.4vh;
-    }
-
-    .fa-volume-down {
-        margin-left: 1vh;
-    }
-
-    .fa-volume-up {
-        margin-left: 10vh;
-    }
-
-    #muteButton,
-    #nextTrackButton,
-    #playPauseButton {
-        border-radius: 5px;
-        margin-left: -8px;
-    }
-
-    #volumeText {
-        font-size: 10px;
-        margin-left: 10vh;
-    }
-
-    p {
-        font-size: 10px;
-    }
-
-    #turn-info {
-        margin-right: 5vh;
-    }
-
-    #turn-number {
-        font-size: 16px;
-    }
-
-    #turn-player {
-        font-size: 12px;
-        margin-top: -12px;
-    }
+.question-icon::before {
+    content: "?";
 }
-
-/* Mobile Styles */
-@media only screen and (max-width: 600px) {
-    .theme-container {
-        top: 2vh;
-        right: 2vh;
-    }
-
-    #info-container {
-        top: 15vh;
-        right: 3vh;
-    }
-    #roll-dice {
-        margin-left: -5vh;
-        /* width: 20vh; */
-        font-size: 12px;
-    }
-
-    /* Add other mobile-specific styles here */
-}
-/* Mobile Styles */
-@media only screen and (max-width: 600px) {
-    .dice-container {
-        top: 15vh;
-        right: 2vh;
-        width: 80vw;
-        height: 80vw;
-    }
-
-    .die-list {
-        height: 30%;
-        width: 30%;
-    }
-
-    .dice {
-        grid-gap: 1rem;
-    }
-
-    .die-item {
-        height: 70%;
-        width: 70%;
-    }
-
-    .dot {
-        height: 10%;
-        width: 10%;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 0.3rem 0.6rem;
-    }
-}
-
-
 
 /* Modal */
-.modal{
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
-    right: 100px;
-    top: 100px;
-    width: 80%;
+    right: 1%;
+    top:1%;
+    width: 100%;
     height: 100%;
     overflow: auto;
 }
 
-.modal-content{
-  background-color: rgba(51, 51, 51, 0.8);
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+.modal-content {
+    background-color: rgba(51, 51, 51, 0.8);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    height: 80%;
 }
 
-.close{
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 
-.close:hover,.close:focus{
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }

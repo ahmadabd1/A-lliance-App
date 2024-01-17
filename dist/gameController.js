@@ -22,6 +22,11 @@ class GameController {
         console.log('startTurn called');
         if (currentPlayer instanceof Dumbot) {
             console.log('startDumbotTurn called');
+            setTimeout(() => {
+                spaceShipSound.volume = 1.0;
+                spaceShipSound.play();
+                console.log("spaceShipSound audio working");
+            }, 4000);
         }
 
         this.gameBoard.displayPlayerTurn(currentPlayer);
