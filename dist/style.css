@@ -12,6 +12,21 @@
     top: 3vh;
     right: 3vh;
 }
+.black-hole-img {
+    width: 120px;
+    height: 20px;
+    background-color: black;
+    border-radius: 50%;
+    margin: 5px;
+}
+.worm-hole-img {
+    width: 120px;
+    height: 20px;
+    background-color: brown;
+    border-radius: 50%;
+    margin: 5px;
+}
+
 #info-container {
     z-index: 9;
     position: fixed;
@@ -926,6 +941,21 @@ p{
     margin: 0;
 }
 
-
+.question-icon {
+    width: 20px;
+    height: 20px;
+    background-color: #FFCC00;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    margin: auto;
+}
+.question-icon::before {
+    content: "?";
+}
 
 
