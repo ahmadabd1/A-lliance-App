@@ -53,6 +53,7 @@ body.dark #volumeText,body.dark p, body.dark .fas.fa-volume-up, body.dark .fas.f
     color: #fff;
 }
 #turn-info{
+    font-family: 'Bungee';font-size: 22px;
     font-weight: 900;
 }
 .checkbox {
@@ -104,14 +105,16 @@ body.dark #volumeText,body.dark p, body.dark .fas.fa-volume-up, body.dark .fas.f
     margin-top: -10px;
    margin-left: -10vh;
     color: black;   
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Bungee';font-size: 22px;
     width: 40vh;
     background-color: grey
 }
 
 /* Board Styling */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+#game-board{
+    margin-left: 60vh;
+}
 :root {
     --floorPattern: #03819d;
     --viewType: #b7b7b7;
@@ -232,6 +235,7 @@ body .container .floor .cardContainer .cardBoard::before {
 }
 
 body .container .floor .cardContainer .cardBoard .boxes {
+
     width: 98%;
     height: 98%;
     display: flex;
@@ -951,11 +955,41 @@ p{
     font-size: 14px;
     color: #333;
     font-weight: bold;
-    position: relative;
-    margin: auto;
 }
 .question-icon::before {
     content: "?";
 }
 
+/* Modal */
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    right: 100px;
+    top: 100px;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+}
 
+.modal-content{
+  background-color: rgba(51, 51, 51, 0.8);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close{
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+
+.close:hover,.close:focus{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

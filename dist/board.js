@@ -54,7 +54,7 @@ class Board {
                 const cell = $("<div class='square' id='" + cellId + "'><div>" + element + "<div/><div/>");
 
                 if (this.questionsInCells[element] && !this.isInMap(element, snakesMap) && !this.isInMap(element, laddersMap)) {
-                    cell.append($('<div class="question-icon"></div>'));
+                    cell.append($('<div class="question-icon" ></div>'));
                 }
                 if (snakesMap[element]) {
                     cell.append($('<div class="black-hole-img"></div>'));
@@ -123,7 +123,6 @@ class Board {
 
     updateDumbotPosition(player) {
         const currentDumbotCell = $(`#square${player.position}`);
-        //console.log(currentDumbotCell)
         $(".dumbot").remove();
         const dumbotElement = $('<div class="dumbot"></div>');
         currentDumbotCell.append(dumbotElement);
@@ -150,6 +149,13 @@ class Board {
                 const cell = $(`#square${randomCellId}`);
                 cell.append(questionIcon);
                 this.questionsInCells[randomCellId] = true;
+                this.questionsInCells[2] = true;
+                this.questionsInCells[3] = true;
+                this.questionsInCells[4] = true;
+                this.questionsInCells[5] = true;
+                this.questionsInCells[6] = true;
+                this.questionsInCells[6] = true;
+                this.questionsInCells[7] = true;
             }
         }
     }
