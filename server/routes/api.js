@@ -7,7 +7,7 @@ const dataHandling = new DataHandling();
 const router = express.Router();
 router.get("/data", (req, res) => {
   try {
-    const promise = axios.get("https://opentdb.com/api.php?amount=10");
+    const promise = axios.get("https://opentdb.com/api.php?amount=10&type=multiple");
     const resData = dataHandling.FilterData(promise);
     setTimeout(() => {
       res.send(resData);
