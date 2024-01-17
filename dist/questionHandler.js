@@ -4,6 +4,15 @@ class QuestionHandler {
         this.board = board;
         this.currentQuestion = null;
     }
+    async fetchdata() {
+        try {
+            this.currentQuestion = await $.get("/data");
+            console.log(this.currentQuestion)
+            this.showQuestionPopup();
+        } catch (error) {
+            console.error("Error fetching question:", error);
+        }
+    }
 
     async fetchQuestion() {
         try {
