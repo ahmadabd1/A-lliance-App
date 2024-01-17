@@ -54,7 +54,7 @@ class Board {
                 const cell = $("<div class='square' id='" + cellId + "'><div>" + element + "<div/><div/>");
 
                 if (this.questionsInCells[element] && !this.isInMap(element, snakesMap) && !this.isInMap(element, laddersMap)) {
-                    cell.append($('<div class="question-icon"></div>'));
+                    cell.append($('<div class="question-icon" ></div>'));
                 }
                 if (snakesMap[element]) {
                     cell.append($('<div class="black-hole-img"></div>'));

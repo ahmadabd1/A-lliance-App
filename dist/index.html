@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
-    
+
 
 <body class="dark">
     <audio id="diceSound" src="./soundFX/diceRoll.mp3"></audio>
@@ -30,7 +30,7 @@
         <div id="welcome-container">
             <h1>The Knights of the A-lliance Welcome You</h1>
             <p>Embark on an epic journey in the vast universe. Are you ready?</p>
-          </div>
+        </div>
         <button id="start-button">Start</button>
     </div>
 
@@ -40,127 +40,129 @@
             <source src="./images/IntroVideo.mp4" type="video/mp4">
         </video>
         <div id="welcome-container">
-        <h1>Introduction</h1>
-        <p>Long ago, in a galaxy far, far away...</p>
-        <p>May the force be with you!</p>
+            <h1>Introduction</h1>
+            <p>Long ago, in a galaxy far, far away...</p>
+            <p>May the force be with you!</p>
         </div>
         <button id="continue-button">Continue</button>
     </div>
-    
+
     <div id="game-container" style="display: none;">
-    <div class="music-container">
-        <audio id="backgroundMusic" loop>
-            <source src="./bgMusic/BGM-1.mp3" type="audio/mp3">
-            <source src="./bgMusic/BGM-2.mp3" type="audio/mp3">
-            <source src="./bgMusic/BGM-3.mp3" type="audio/mp3">
-        </audio>
-        <div class="music-controls">
-            <label id="volumeText" for="volume">Space Radio</label><br>
-            <p>Adjust the volume of your audio using the slider below.</p><br>
-            <div class="volume-controls">
-                <i class="fa fa-volume-down"></i>
-                <i class="fa fa-volume-up"></i>
-                <br>
-                <input type="range" id="volume" name="volume" min="0" max="0.2" step="0.1" value="1"
-                    onchange="changeVolume()"><br>
-                <button onclick="toggleMute()" id="muteButton" title="Mute"><i class="fas fa-volume-up"></i></button>
-                <button onclick="togglePlayPause()" id="playPauseButton" title="Play/Pause"><i
-                        class="fas fa-play"></i></button>
-                <button onclick="nextTrack()" id="nextTrackButton" title="Next Track Button"><i
-                        class="fas fa-forward"></i></button>
+        <div class="music-container">
+            <audio id="backgroundMusic" loop>
+                <source src="./bgMusic/BGM-1.mp3" type="audio/mp3">
+                <source src="./bgMusic/BGM-2.mp3" type="audio/mp3">
+                <source src="./bgMusic/BGM-3.mp3" type="audio/mp3">
+            </audio>
+            <div class="music-controls">
+                <label id="volumeText" for="volume">Space Radio</label><br>
+                <p>Adjust the volume of your audio using the slider below.</p><br>
+                <div class="volume-controls">
+                    <i class="fa fa-volume-down"></i>
+                    <i class="fa fa-volume-up"></i>
+                    <br>
+                    <input type="range" id="volume" name="volume" min="0" max="0.2" step="0.1" value="1"
+                        onchange="changeVolume()"><br>
+                    <button onclick="toggleMute()" id="muteButton" title="Mute"><i
+                            class="fas fa-volume-up"></i></button>
+                    <button onclick="togglePlayPause()" id="playPauseButton" title="Play/Pause"><i
+                            class="fas fa-play"></i></button>
+                    <button onclick="nextTrack()" id="nextTrackButton" title="Next Track Button"><i
+                            class="fas fa-forward"></i></button>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="theme-container">
-        <input type="checkbox" class="checkbox" id="checkbox" checked>
-        <label for="checkbox" class="checkbox-label">
-            <i class="fas fa-moon"></i>
-            <i class="fas fa-sun"></i>
-            <span class="ball"></span>
-        </label>
-    </div>
-    <div id="info-container">
-        <br>
-        <div id="turn-info"></div>
-        <div id="roll-result"></div>
-    </div>
-    <div class="dice-container">
-        <br><br><br><br><br><br><br>
-        <div class="dice">
-            <ol class="die-list even-roll" data-roll="1" id="die-1">
-                <li class="die-item" data-side="1">
-                    <span class="dot"></span>
-                </li>
-                <li class="die-item" data-side="2">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </li>
-                <li class="die-item" data-side="3">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </li>
-                <li class="die-item" data-side="4">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </li>
-                <li class="die-item" data-side="5">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </li>
-                <li class="die-item" data-side="6">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </li>
-            </ol>
-
+        <div class="theme-container">
+            <input type="checkbox" class="checkbox" id="checkbox" checked>
+            <label for="checkbox" class="checkbox-label">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <span class="ball"></span>
+            </label>
         </div>
-        <button id="roll-dice"> Roll Dice <i class="fas fa-hand-pointer"></i>
-        </i></button>
-    </div>
-    
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Choose Answer!</h2><br><br>
-            <form id="optionsForm">
-                <input type="checkbox" id="answer1" name="answer1" value="answer1">
-                <label class="answer1" for="answer1"></label><br><br>
-                <input type="checkbox" id="answer2" name="answer2" value="answer2">
-                <label class="answer2" for="answer2"></label><br><br>
-                <input type="checkbox" id="answer3" name="answer3" value="answer3">
-                <label class="answer3" for="answer3"></label><br><br>
-                <input type="checkbox" id="answer4" name="answer4" value="answer4">
-                <label class="answer4" for="answer4"></label><br><br>
-                <input type="submit" value="submit">
-            </form>
+        <div id="info-container">
+            <br>
+            <div id="turn-info"></div>
+            <div id="roll-result"></div>
         </div>
-    </div> 
-    
+        <div class="dice-container">
+            <br><br><br><br><br><br><br>
+            <div class="dice">
+                <ol class="die-list even-roll" data-roll="1" id="die-1">
+                    <li class="die-item" data-side="1">
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="2">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="3">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="4">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="5">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                    <li class="die-item" data-side="6">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </li>
+                </ol>
 
-    <div id="game-board">
-        <div class="container flexBox">
-            <div class="floor flexBox">
-                <div class="cardContainer">
-                    <div class="cardBoard flexBox">
-                        <div class="boxes">
-                            <div class="player-container">
-                                <div class="player"></div>
-                            </div>
-                            <div class="svg-container">
-                                <svg viewBox="0 0 500 500" width="500" height="500" xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:bx="https://boxy-svg.com">
-                                </svg>
+            </div>
+            <button id="roll-dice"> Roll Dice <i class="fas fa-hand-pointer"></i>
+                </i></button>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Choose Answer!</h2><br><br>
+                <form id="optionsForm">
+                    <input type="checkbox" id="answer1" name="answer1" value="answer1">
+                    <label class="answer1" for="answer1"></label><br><br>
+                    <input type="checkbox" id="answer2" name="answer2" value="answer2">
+                    <label class="answer2" for="answer2"></label><br><br>
+                    <input type="checkbox" id="answer3" name="answer3" value="answer3">
+                    <label class="answer3" for="answer3"></label><br><br>
+                    <input type="checkbox" id="answer4" name="answer4" value="answer4">
+                    <label class="answer4" for="answer4"></label><br><br>
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+        </div>
+
+
+        <div id="game-board">
+            <div class="container flexBox">
+                <div class="floor flexBox">
+                    <div class="cardContainer">
+                        <div class="cardBoard flexBox">
+                            <div class="boxes">
+                                <div class="player-container">
+                                    <div class="player"></div>
+                                </div>
+                                <div class="svg-container">
+                                    <svg viewBox="0 0 500 500" width="500" height="500"
+                                        xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+                                    </svg>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -169,19 +171,13 @@
         </div>
     </div>
 
-       
 
-
-
+    <div id="question-container"></div>
+    </div>
     </div>
 
 
-    <div id="question-container"></div>
-</div>
-</div>
 
-    
-  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="consts.js"></script>

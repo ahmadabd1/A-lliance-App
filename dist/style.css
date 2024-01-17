@@ -19,8 +19,6 @@
     border-radius: 50%;
     margin: 5px;
 }
-<<<<<<< HEAD
-=======
 .worm-hole-img {
     width: 120px;
     height: 20px;
@@ -28,15 +26,7 @@
     border-radius: 50%;
     margin: 5px;
 }
->>>>>>> main
 
-.worm-hole-img {
-    width: 120px;
-    height: 20px;
-    background-color: brown;
-    border-radius: 50%;
-    margin: 5px;
-}
 #info-container {
     z-index: 9;
     position: fixed;
@@ -62,24 +52,9 @@ body.dark #volumeText,body.dark p, body.dark .fas.fa-volume-up, body.dark .fas.f
 {
     color: #fff;
 }
-<<<<<<< HEAD
-
-.question-icon {
-    width: 20px;
-    height: 20px;
-    background-color: #ffcc00;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 20px;
-    font-size: 14px;
-    color: #333;
-    font-weight: bold;
-    position: relative;
-    margin: auto;
-=======
 #turn-info{
+    font-family: 'Bungee';font-size: 22px;
     font-weight: 900;
->>>>>>> main
 }
 .checkbox {
     opacity: 0;
@@ -130,14 +105,16 @@ body.dark #volumeText,body.dark p, body.dark .fas.fa-volume-up, body.dark .fas.f
     margin-top: -10px;
    margin-left: -10vh;
     color: black;   
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Bungee';font-size: 22px;
     width: 40vh;
     background-color: grey
 }
 
 /* Board Styling */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+#game-board{
+    margin-left: 60vh;
+}
 :root {
     --floorPattern: #03819d;
     --viewType: #b7b7b7;
@@ -258,6 +235,7 @@ body .container .floor .cardContainer .cardBoard::before {
 }
 
 body .container .floor .cardContainer .cardBoard .boxes {
+
     width: 98%;
     height: 98%;
     display: flex;
@@ -977,8 +955,6 @@ p{
     font-size: 14px;
     color: #333;
     font-weight: bold;
-    position: relative;
-    margin: auto;
 }
 .question-icon::before {
     content: "?";
@@ -1012,132 +988,8 @@ p{
 }
 
 
-<<<<<<< HEAD
-@media only screen and (max-width: 600px) {
-    body .container {
-        width: 90vw;
-    }
-
-    .music-container {
-        top: 2vh;
-        left: 2vh;
-    }
-
-    .music-controls * {
-        font-size: 8px;
-    }
-
-    .player,
-    .dumbot {
-        width: 15px;
-        height: 15px;
-    }
-
-    .volume-controls {
-        margin-left: 5vh;
-    }
-
-    .fa-volume-mute {
-        margin-left: 10.4vh;
-    }
-
-    .fa-volume-down {
-        margin-left: 1vh;
-    }
-
-    .fa-volume-up {
-        margin-left: 10vh;
-    }
-
-    #muteButton,
-    #nextTrackButton,
-    #playPauseButton {
-        border-radius: 5px;
-        margin-left: -8px;
-    }
-
-    #volumeText {
-        font-size: 10px;
-        margin-left: 10vh;
-    }
-
-    p {
-        font-size: 10px;
-    }
-
-    #turn-info {
-        margin-right: 5vh;
-    }
-
-    #turn-number {
-        font-size: 16px;
-    }
-
-    #turn-player {
-        font-size: 12px;
-        margin-top: -12px;
-    }
-}
-
-/* Mobile Styles */
-@media only screen and (max-width: 600px) {
-    .theme-container {
-        top: 2vh;
-        right: 2vh;
-    }
-
-    #info-container {
-        top: 15vh;
-        right: 3vh;
-    }
-
-    #roll-dice {
-        margin-left: -5vh;
-        /* width: 20vh; */
-        font-size: 12px;
-    }
-
-    /* Add other mobile-specific styles here */
-}
-
-/* Mobile Styles */
-@media only screen and (max-width: 600px) {
-    .dice-container {
-        top: 15vh;
-        right: 2vh;
-        width: 80vw;
-        height: 80vw;
-    }
-
-    .die-list {
-        height: 30%;
-        width: 30%;
-    }
-
-    .dice {
-        grid-gap: 1rem;
-    }
-
-    .die-item {
-        height: 70%;
-        width: 70%;
-    }
-
-    .dot {
-        height: 10%;
-        width: 10%;
-    }
-
-    button {
-        font-size: 1rem;
-        padding: 0.3rem 0.6rem;
-    }
-}
-
-=======
 .close:hover,.close:focus{
   color: black;
   text-decoration: none;
   cursor: pointer;
 }
->>>>>>> main
