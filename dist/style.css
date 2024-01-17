@@ -12,6 +12,7 @@
     top: 3vh;
     right: 3vh;
 }
+
 .black-hole-img {
     width: 120px;
     height: 20px;
@@ -19,6 +20,7 @@
     border-radius: 50%;
     margin: 5px;
 }
+
 .worm-hole-img {
     width: 120px;
     height: 20px;
@@ -27,38 +29,90 @@
     margin: 5px;
 }
 
-#info-container {
+/* #info-container {
     z-index: 9;
     position: fixed;
-    top: 20vh;
+    top: 12vh;
     right: 4vh;
-    color: #c63d2b;
+    display: flex;
+    text-align: center;
+    background-color: #545754;
+    opacity: 0.1;
+    border-radius: 7px;
+} */
+#info-container {
+    z-index: 9;
+    background-color: rgba(51, 51, 51, 0.5);
+    /* Dark gray with 80% opacity */
+    border: 2px solid #555;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    top: 14vh;
+    right: 13vh;
 }
+
+#welcome-container h1 {
+    font-size: 2em;
+    font-family: 'Bungee';
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 /* Dark Theme */
 body.dark {
     background-image: url('./images/spaceBG.jpg');
-    background-size: cover; 
+    background-size: cover;
 
 }
 
 /* Light Theme */
 body.light {
     background-image: url('./images/dayBG.jpg');
-    background-size: cover; 
+    background-size: cover;
 }
 
 body.dark #turn-info,
-body.dark #volumeText,body.dark p, body.dark .fas.fa-volume-up, body.dark .fas.fa-forward, body.dark .fas.fa-play
-{
+body.dark #volumeText,
+body.dark #turn-number,
+body.dark #turn-player,
+body.dark #adjust
+ {
+    color: greenyellow;
+}
+body.dark .fas.fa-volume-up,
+body.dark .fas.fa-forward,
+body.dark .fas.fa-play{
     color: #fff;
+
 }
-#turn-info{
-    font-family: 'Bungee';font-size: 22px;
+#turn-info {
+    font-family: 'Bungee';
+    font-size: 22px;
     font-weight: 900;
+
 }
+
 .checkbox {
     opacity: 0;
     position: absolute;
+}
+
+#turn-player {
+    font-family: 'Bungee';
+    font-size: 16px;
+    margin-top: -4vh;
+    color: #fff;
+
+}
+
+#turn-number {
+    color: #fff;
+    font-family: 'Bungee';
+    font-size: 22px;
 }
 
 .city {
@@ -100,21 +154,25 @@ body.dark #volumeText,body.dark p, body.dark .fas.fa-volume-up, body.dark .fas.f
 .checkbox:checked+.checkbox-label .ball {
     transform: translateX(24px);
 }
-#roll-dice{
+
+#roll-dice {
     border-radius: 30px;
     margin-top: -10px;
-   margin-left: -10vh;
-    color: black;   
-    font-family: 'Bungee';font-size: 22px;
+    margin-left: -18vh;
+    color: black;
+    font-family: 'Bungee';
+    font-size: 22px;
     width: 40vh;
     background-color: grey
 }
 
 /* Board Styling */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-#game-board{
+
+#game-board {
     margin-left: 60vh;
 }
+
 :root {
     --floorPattern: #03819d;
     --viewType: #b7b7b7;
@@ -486,7 +544,7 @@ html {
     z-index: 9;
     position: fixed;
     top: 25vh;
-    right: 2vh;
+    right: 3vh;
     width: 30vh;
     height: 30vh;
 }
@@ -499,6 +557,7 @@ html {
     /* grid-template-rows: auto; */
     /* justify-items: center; */
     /* padding: 2rem; */
+    right: 5vh;
     perspective: 600px;
 }
 
@@ -510,6 +569,8 @@ html {
     list-style-type: none;
     transform-style: preserve-3d;
     width: 6rem;
+    margin-right: 15vh;
+
 }
 
 .even-roll {
@@ -728,10 +789,11 @@ button:hover {
     left: 2vh;
 }
 
-#turn-info{
-    color: black;   
+#turn-info {
+    color: black;
     font-family: 'Great Vibes', cursive;
 }
+
 .music-controls * {
     font-size: 10px;
 }
@@ -755,25 +817,29 @@ button:hover {
     background-image: url('./images/spaceShip.png');
     background-size: cover;
 }
-.volume-controls{
+
+.volume-controls {
     margin-left: 15vh;
 }
-.fa-volume-down{
+
+.fa-volume-down {
     margin-left: 1vh;
     color: gray;
 }
-.fa-volume-up{
+
+.fa-volume-up {
     margin-left: 21vh;
     color: gray;
 }
-.fas.fa-volume-up{
-    color: #111;
+
+.fas.fa-volume-up {
+    color: white;
 }
 
 #muteButton {
     border-radius: 10px;
     cursor: pointer;
-    color: black;
+    color: white;
     background-color: transparent;
     margin-left: -88px;
 }
@@ -781,28 +847,35 @@ button:hover {
 #nextTrackButton {
     border-radius: 10px;
     cursor: pointer;
-    color: #111;
+    color: white;
     background-color: transparent;
     margin-left: -15px;
 }
-#volumeText{
+
+#volumeText {
     font-size: 12px;
-    color: black;   
+    color: white;
     font-family: 'Great Vibes', cursive;
     font-weight: 600;
     margin-left: 20vh;
 }
-p{
+
+p {
     font-family: 'Great Vibes', cursive;
     font-size: 12px;
-    color: black;   
+    color: #fff;
 }
+
 #playPauseButton {
     border-radius: 10px;
     cursor: pointer;
     background-color: transparent;
-    color: #111;
+    color: #fff;
     margin-left: -15px;
+}
+
+.fa-volume-mute {
+    margin-left: 21vh;
 }
 
 /*  */
@@ -813,6 +886,7 @@ p{
     padding: 20px;
     display: block;
 }
+
 .introMenu {
     text-align: center;
     border-radius: 8px;
@@ -864,7 +938,8 @@ p{
     display: inline-block;
     padding: 10px 20px;
     font-size: 18px;
-    font-family: 'Bungee';font-size: 22px;
+    font-family: 'Bungee';
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #fff;
@@ -883,12 +958,14 @@ p{
 
 #start-button:hover,
 #continue-button:hover {
-    background-color: #444; /* Adjust the color on hover */
+    background-color: #444;
+    /* Adjust the color on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    transform: translate(-50%, -50%) scale(1.05); /* Add a slight scale on hover */
+    transform: translate(-50%, -50%) scale(1.05);
+    /* Add a slight scale on hover */
 }
 
-  
+
 #backgroundCanvasMenu {
     position: fixed;
     top: 0;
@@ -899,6 +976,7 @@ p{
     background-image: url('./images/footman.gif');
     background-size: cover;
 }
+
 #backgroundCanvasIntro {
     position: fixed;
     top: 0;
@@ -909,20 +987,24 @@ p{
     background: url('./images/IntroVideo.mp4');
     background-size: cover;
 }
+
 #backgroundVideoIntro {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This ensures the video covers the whole screen */
+    object-fit: cover;
+    /* This ensures the video covers the whole screen */
     z-index: -1;
 }
+
 /* Video Style Welcome Message */
 
-  
+
 #welcome-container {
-    background-color: rgba(51, 51, 51, 0.5); /* Dark gray with 80% opacity */
+    background-color: rgba(51, 51, 51, 0.5);
+    /* Dark gray with 80% opacity */
     border: 2px solid #555;
     border-radius: 10px;
     padding: 20px;
@@ -934,14 +1016,16 @@ p{
 
 #welcome-container h1 {
     font-size: 2em;
-    font-family: 'Bungee';font-size: 22px;
+    font-family: 'Bungee';
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 #welcome-container p {
     font-size: 1.2em;
-    font-family: 'Bungee';font-size: 22px;
+    font-family: 'Bungee';
+    font-size: 22px;
     margin: 0;
 }
 
@@ -956,12 +1040,13 @@ p{
     color: #333;
     font-weight: bold;
 }
+
 .question-icon::before {
     content: "?";
 }
 
 /* Modal */
-.modal{
+.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -972,24 +1057,25 @@ p{
     overflow: auto;
 }
 
-.modal-content{
-  background-color: rgba(51, 51, 51, 0.8);
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+.modal-content {
+    background-color: rgba(51, 51, 51, 0.8);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
 }
 
-.close{
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 
-.close:hover,.close:focus{
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
