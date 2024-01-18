@@ -1134,6 +1134,7 @@ p {
     color: #fff;
     max-width: 600px;
     margin: 0 auto;
+    overflow-y: auto;
 }
 
 #welcome-container h1 {

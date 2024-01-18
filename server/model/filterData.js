@@ -5,16 +5,31 @@ class DataHandling {
   constructor() {
     this.listData = [];
   }
-  FilterData(promise) {
+  async FilterData(promise) {
     try {
-      const resp = promise;
-      const _data = resp.then((result) => {
-        console.log(result.data.results[0]);
-        result.data.results.forEach((element) => {
-          this.listData.push(element);
-        });
+      // const resp = promise;
+      // const _data = resp.then((result) => {
+      //   console.log(result.data.results[0]);
+      //   result.data.results.forEach((element) => {
+      //     this.listData.push(element);
+      //   });
+      // });
+      // DB.saveDataToDatabase(this.listData);
+      // return this.listData;
+
+      const resp =  await promise;
+      const _data = resp.data.results.map((key) => {
+        return {
+          difficulty: key.difficulty,
+          category: key.category,
+          type: key.type,
+          question: key.question,
+          correct_answer: key.correct_answer,
+          incorrect_answers: key.incorrect_answers,
+        };
       });
-      DB.saveDataToDatabase(this.listData);
+      this.listData = _data;
+      DB.saveDataToDatabase(_data);
       return this.listData;
     } catch (error) {
         console.error("Error in Fetching Data: ", error);
