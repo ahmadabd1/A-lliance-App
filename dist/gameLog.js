@@ -1,8 +1,9 @@
-function logToGame(message) {
+function logToGame(message , color) {
     console.log(message);
     var gameLog = document.getElementById('game-log');
     if (gameLog) {
         var newLog = document.createElement('p');
+        newLog.style.color = color;
         newLog.textContent = message;
         gameLog.appendChild(newLog);
         gameLog.offsetHeight;

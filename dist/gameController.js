@@ -39,13 +39,17 @@ class GameController {
         this.gameBoard.turnNumber++
 
         setTimeout(async () => {
+            const sum = currentPlayer.position + currentPlayer.rollValue
             this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
             this.gameBoard.displayPlayerTurn(currentPlayer)
-            logToGame('Dice Roll:' + '' + currentPlayer.rollValue);
-            const sum = currentPlayer.position + currentPlayer.rollValue
+            if((currentPlayer instanceof Dumbot)){
+                logToGame(`${currentPlayer.name}'s Dice Roll:` + '' + currentPlayer.rollValue , "red");
+            }else{
+                logToGame(`${currentPlayer.name}'s Dice Roll:` + '' + currentPlayer.rollValue , "blue");
+            }
             if ($(`#b${sum}`).attr('class') === 'black-hole-img') {
                 console.log('WORKING')
-                logToGame('You have been either decimated by a black hole or teleported by a worm hole, good luck');
+                logToGame(`You have been either decimated by a black hole or teleported by a worm hole in cell ${sum} , good luck`);
             }
             if ($(`#q${sum}`).attr('class') === 'question-icon') {
                 logToGame('You stand before fate incarnate, Choose your answer carefully, or be forever doomed');
@@ -63,7 +67,6 @@ class GameController {
 
             this.changePlayerTurn();
             if(!(currentPlayer instanceof Dumbot)) {
-                logToGame('Dice Roll:' + '' + currentPlayer.rollValue);
                 this.nextTurn();
             }
         }, 4000)

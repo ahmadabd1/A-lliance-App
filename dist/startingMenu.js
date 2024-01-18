@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         gameContainer.style.display = "block"; // Show the game container
         gameContainer.classList.add("active");
         audioPlayer.pause();
+        backgroundMusic.play();
     });
 
     historyButton.addEventListener("click", function () {
