@@ -9,7 +9,7 @@ class QuestionHandler {
 
     async fetchQuestion() {
         try {
-            this.currentQuestion = await $.get("/data");
+            this.currentQuestion = await $.get("/dbdata");
             console.log(this.currentQuestion)
             this.modalPopUP();
         } catch (error) {
@@ -23,12 +23,12 @@ class QuestionHandler {
             this.player = this.board.getCurrentPlayer();
             //Get modal
             var modal = $("#myModal");
-            const questionText = this.currentQuestion[0].question;
+            const questionText = this.currentQuestion.question;
             $("h2").text(questionText);
             let answerOptions = []
             answerOptions = [
-            ...this.currentQuestion[0].incorrect_answers,
-            this.currentQuestion[0].correct_answer,
+            ...this.currentQuestion.incorrect_answers,
+            this.currentQuestion.correct_answer,
             ];
             const CorrectAnswer = answerOptions[3]
 
