@@ -1205,4 +1205,25 @@ p {
     text-decoration: none;
     cursor: pointer;
 }
+#Incoming-Message {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Bungee';
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #545754;
+    border: 2px solid #545754;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: absolute;
+    top: 20%;
+    right: 70%;
+    transform: translate(-50%, -50%);
+}
 

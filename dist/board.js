@@ -204,8 +204,11 @@ class Board {
 
         if (player instanceof Dumbot)
             this.updateDumbotPosition(player);
-        else
+        else {
             this.updatePlayerPosition(player);
+            horseSound.volume = 1.0;
+            horseSound.play();
+        }
 
         if (player.position < 1) {
             player.position = 1;

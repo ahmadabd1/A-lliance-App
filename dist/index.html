@@ -26,7 +26,11 @@
     <audio id="spaceShipSound" src="./soundFX/spaceShip.mp3"></audio>
     <audio id="buttonClickSound" src="./soundFX/buttonClick.wav"></audio>
     <audio id="horseSound" src="./soundFX/horseSound.wav"></audio>
-
+    <audio id="audioPlayer" oncanplay="audioReady()">
+        <source src="./soundFX/soundTrackIntro.wav">
+        Your browser does not support the audio tag.
+    </audio>
+    <audio id="alo" src="./alo.mp3"></audio>
 
     <div id="starting-menu" class="mainMenu">
         <canvas id="backgroundCanvasMenu"></canvas>
@@ -48,6 +52,7 @@
             <p></br>As you step into the shoes of a novice knight, the universe unfolds before you like an ancient tapestry. From the radiant core worlds to the mysterious outer rims, you will traverse uncharted territories, time defining entities, and face formidable adversaries.</p>
         </div>
         <button id="sports-button">Sports</button>
+        <button id="Incoming-Message" onclick="playAudio()">VoiceLog</button>
         <button id="history-button">History</button>
         <button id="vehicles-button">Vehicles</button><br><br>
         <button id="continue-button">Random</button>

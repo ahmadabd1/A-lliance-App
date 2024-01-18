@@ -65,6 +65,7 @@ class QuestionHandler {
                     alert("Oops! Incorrect answer! the correct answer is: "+CorrectAnswer+" You will now move back 10 steps.");
                 }
                     modal.hide();
+                    spaceShipSound.play();
                     questoionHandler.board.movePlayer( questoionHandler.board.players[0], questoionHandler.numsteps);
             });
           
