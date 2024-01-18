@@ -2,7 +2,7 @@ class ApiManager{
     
     fetchQuestions() {
         try {
-            console.log($.get("/data"))
+            
         //    return $.get("/data");
             
             

@@ -10,7 +10,6 @@ class QuestionHandler {
     async fetchQuestion() {
         try {
             this.currentQuestion = await $.get("/dbdata");
-            console.log(this.currentQuestion)
             this.modalPopUP();
         } catch (error) {
             console.error("Error fetching question:", error);
@@ -55,8 +54,6 @@ class QuestionHandler {
                 $('input[type=checkbox]:checked').each(function(){
                     selectedOptions.push($(this).next().text());
                 });
-                console.log("iam the select :",selectedOptions)
-                console.log("iam the corecct answer :" ,CorrectAnswer)
                 if (selectedOptions[1] == CorrectAnswer) {
                     questoionHandler.numsteps = 5;
                     alert("Woohoo! Correct answer! You can now proceed by 5 step.");

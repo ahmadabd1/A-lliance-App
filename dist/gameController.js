@@ -19,13 +19,10 @@ class GameController {
     startTurn() {
         const currentPlayer = this.gameBoard.getCurrentPlayer();
 
-        console.log('startTurn called');
         if (currentPlayer instanceof Dumbot) {
-            console.log('startDumbotTurn called');
             setTimeout(() => {
                 spaceShipSound.volume = 1.0;
                 spaceShipSound.play();
-                console.log("spaceShipSound audio working");
             }, 4000);
         }
 
@@ -34,7 +31,6 @@ class GameController {
         rollDice(currentPlayer.rollValue);
         diceSound.volume = 1.0;
         diceSound.play();
-        console.log("diceRoll audio working");
 
         this.gameBoard.turnNumber++
 
@@ -48,14 +44,11 @@ class GameController {
                 logToGame(`${currentPlayer.name}'s Dice Roll:` + '' + currentPlayer.rollValue , "blue");
             }
             if ($(`#b${sum}`).attr('class') === 'black-hole-img') {
-                console.log('WORKING')
                 logToGame(`You have been either decimated by a black hole or teleported by a worm hole in cell ${sum} , good luck`);
             }
             if ($(`#q${sum}`).attr('class') === 'question-icon') {
                 logToGame('You stand before fate incarnate, Choose your answer carefully, or be forever doomed');
             }
-            console.log("result :", $(`#q${sum}`).attr('class'))
-            console.log('sum:', sum)
             if (currentPlayer.position === this.gameBoard.totalCells) {
                 setTimeout(() => {
                     alert(`Congratulations! ${currentPlayer.name} has won!`);

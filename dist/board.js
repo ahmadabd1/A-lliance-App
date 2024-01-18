@@ -93,18 +93,8 @@ class Board {
 
     displayPlayerTurn(player) {
         const turnInfo = `<div id="turn-number">Turn ${this.turnNumber}</div><br> <div id="turn-player">it's ${player.name}'s turn</div>`;
-        console.log(this.turnNumber)
 
         $('#turn-info').empty().append(`<div>${turnInfo}</div>`);
-
-        // let rollResult = '';
-        // rollResult = `Player Dice Result: ${player.rollValue}`;
-
-        // if (player instanceof Dumbot) {
-        //     rollResult = `Dumbot Dice Result: ${player.rollValue}`;
-        // }
-        // $('#roll-result').empty().append(`<div>${rollResult}</div>`);
-
 
         if (player instanceof Dumbot) {
             this.updateDumbotPosition(player);
@@ -142,7 +132,6 @@ class Board {
     placeQuestionsRandomly() {
         for (let i = 0; i < this.maxQuestions; i++) {
             const randomCellId = this.getRandomEmptyCell();
-            console.log(randomCellId)
             const questionIcon = $('<div class="question-icon"></div>');
 
             if (randomCellId) {

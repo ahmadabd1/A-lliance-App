@@ -1,5 +1,4 @@
 function logToGame(message , color) {
-    console.log(message);
     var gameLog = document.getElementById('game-log');
     if (gameLog) {
         var newLog = document.createElement('p');

@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 backgroundMusic.addEventListener("canplay", function () {
-  console.log("Audio can play.");
 });
 
 function changeVolume() {
