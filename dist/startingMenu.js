@@ -12,22 +12,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     startButton.addEventListener("click", function () {
-        startingMenu.style.display = "none"; // Hide the starting menu
+        startingMenu.style.display = "none"; 
         introPage.classList.add("active");
     });
 
     continueButton.addEventListener("click", function () {
         $.get("/data")
         introPage.classList.remove("active");
-        gameContainer.style.display = "block"; // Show the game container
+        gameContainer.style.display = "block"; 
         gameContainer.classList.add("active");
         audioPlayer.pause();
+        backgroundMusic.play();
     });
 
     sportsButton.addEventListener("click", function () {
         $.get("/categories/Sports")
         introPage.classList.remove("active");
-        gameContainer.style.display = "block"; // Show the game container
+        gameContainer.style.display = "block"; 
         gameContainer.classList.add("active");
         audioPlayer.pause();
         backgroundMusic.play();
@@ -36,19 +37,21 @@ document.addEventListener("DOMContentLoaded", function () {
     historyButton.addEventListener("click", function () {
         $.get("/categories/History")
         introPage.classList.remove("active");
-        gameContainer.style.display = "block"; // Show the game container
+        gameContainer.style.display = "block";
         gameContainer.classList.add("active");
         audioPlayer.pause();
+        backgroundMusic.play();
     });
 
     vehiclesButton.addEventListener("click", function () {
         $.get("/categories/Vehicles")
         introPage.classList.remove("active");
-        gameContainer.style.display = "block"; // Show the game container
+        gameContainer.style.display = "block"; 
         gameContainer.classList.add("active");
         audioPlayer.pause();
+        backgroundMusic.play();
     });
     
 
-    // ... (rest of your code)
+    
 });
