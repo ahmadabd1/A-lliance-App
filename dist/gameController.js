@@ -41,7 +41,6 @@ class GameController {
         setTimeout(async () => {
             this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
             this.gameBoard.displayPlayerTurn(currentPlayer)
-            logToGame('Now is your turn');
             logToGame('Dice Roll:' + '' + currentPlayer.rollValue);
             const sum = currentPlayer.position + currentPlayer.rollValue
             if ($(`#b${sum}`).attr('class') === 'black-hole-img') {
@@ -64,7 +63,6 @@ class GameController {
 
             this.changePlayerTurn();
             if(!(currentPlayer instanceof Dumbot)) {
-                logToGame('Now is alien turn');
                 logToGame('Dice Roll:' + '' + currentPlayer.rollValue);
                 this.nextTurn();
             }
