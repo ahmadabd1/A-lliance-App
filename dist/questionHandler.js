@@ -25,7 +25,8 @@ class QuestionHandler {
             var modal = $("#myModal");
             const questionText = this.currentQuestion[0].question;
             $("h2").text(questionText);
-            const answerOptions = [
+            let answerOptions = []
+            answerOptions = [
             ...this.currentQuestion[0].incorrect_answers,
             this.currentQuestion[0].correct_answer,
             ];
