@@ -6,15 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A-lliance App</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        integrity="sha512-hnnzyG4MfnQ4//xld5/8rjtiivz46F2hX3e04we5tW07ntztt+j8fF/Tb7+4q8eUmTV6q02ew/FpWT4aRCA/Cw=="
-        crossorigin="anonymous" />
+    integrity="sha512-hnnzyG4MfnQ4//xld5/8rjtiivz46F2hX3e04we5tW07ntztt+j8fF/Tb7+4q8eUmTV6q02ew/FpWT4aRCA/Cw=="
+    crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles2.css" />
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@5.3.4/dist/simplebar.min.css">
 </head>
 
 
@@ -72,7 +73,7 @@
                 </div>
             </div>
         </div>
-
+        <div id="game-log"></div>
         <div class="theme-container">
             <input type="checkbox" class="checkbox" id="checkbox" checked>
             <label for="checkbox" class="checkbox-label">
@@ -176,11 +177,15 @@
     </div>
     </div>
 
+    
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplebar/6.2.5/simplebar.min.js"></script>
+    <script>new SimpleBar(document.getElementById('game-log'));</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="consts.js"></script>
+    <script src="gameLog.js"></script>
     <script src="dice.js"></script>
     <script src="player.js"></script>
     <script src="dumbot.js"></script>

@@ -41,9 +41,22 @@ class GameController {
         setTimeout(async () => {
             this.gameBoard.movePlayer(currentPlayer, currentPlayer.rollValue)
             this.gameBoard.displayPlayerTurn(currentPlayer)
+            logToGame('Now is your turn');
+            logToGame('Dice Roll:' + '' + currentPlayer.rollValue);
+            const sum = currentPlayer.position + currentPlayer.rollValue
+            if ($(`#b${sum}`).attr('class') === 'black-hole-img') {
+                console.log('WORKING')
+                logToGame('You have been either decimated by a black hole or teleported by a worm hole, good luck');
+            }
+            if ($(`#q${sum}`).attr('class') === 'question-icon') {
+                logToGame('You stand before fate incarnate, Choose your answer carefully, or be forever doomed');
+            }
+            console.log("result :", $(`#q${sum}`).attr('class'))
+            console.log('sum:', sum)
             if (currentPlayer.position === this.gameBoard.totalCells) {
                 setTimeout(() => {
                     alert(`Congratulations! ${currentPlayer.name} has won!`);
+                    logToGame('Congratulations!, You have freed your galaxy');
                     this.resetGame();
                 }, 50);
                 return;
@@ -51,6 +64,8 @@ class GameController {
 
             this.changePlayerTurn();
             if(!(currentPlayer instanceof Dumbot)) {
+                logToGame('Now is alien turn');
+                logToGame('Dice Roll:' + '' + currentPlayer.rollValue);
                 this.nextTurn();
             }
         }, 4000)
@@ -79,6 +94,8 @@ class GameController {
         this.currentPlayerIndex = 0;
     }
 }
+
+
     
 
 const boardSize = 10;
