@@ -53,16 +53,17 @@ class Board {
                 const cell = $("<div class='square' id='" + cellId + "'><div>" + element + "<div/><div/>");
 
                 if (this.questionsInCells[element] && !this.isInMap(element, snakesMap) && !this.isInMap(element, laddersMap)) {
-                    cell.append($('<div class="question-icon" ></div>'));
+                    cell.append($(`<div id="q${element}" class="question-icon" ></div>`));
                 }
                 if (snakesMap[element]) {
-                    cell.append($('<div class="black-hole-img"></div>'));
+                    cell.append($(`<div id="b${element}" class="black-hole-img"></div>`));
                 }
     
                 if (laddersMap[element]) {
-                    cell.append($('<div class="black-hole-img"></div>'));
+                    cell.append($(`<div id="b${element}" class="black-hole-img"></div>`));
                 }
                 cell.appendTo(".cardBoard .boxes");
+
 
                 $("#" + cellId).css("animation", ".3s boxAnimation");
                 $("#" + cellId).css("animation-delay", Math.floor(Math.random() * 100) / 40 + "s");
@@ -172,8 +173,8 @@ class Board {
 
 
     async initializeBoard() {
-        this.addPlayer(new Player("Player 1"));
-        this.addPlayer(new Dumbot("Dumbot"));
+        this.addPlayer(new Player("Space Knight"));
+        this.addPlayer(new Dumbot("Alien"));
         this.createBoard();
         this.placeQuestionsRandomly();
         this.displayPlayerTurn(this.getCurrentPlayer())
