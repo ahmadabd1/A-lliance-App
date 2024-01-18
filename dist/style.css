@@ -977,13 +977,109 @@ p {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, box-shadow 0.3s;
     position: absolute;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #start-button:hover,
 #continue-button:hover {
+    background-color: #444;
+    /* Adjust the color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%) scale(1.05);
+    /* Add a slight scale on hover */
+}
+
+#start-button,
+#sports-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Bungee';
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #545754;
+    border: 2px solid #545754;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+#start-button:hover,
+#sports-button:hover {
+    background-color: #444;
+    /* Adjust the color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%) scale(1.05);
+    /* Add a slight scale on hover */
+}
+
+#start-button,
+#history-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Bungee';
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #545754;
+    border: 2px solid #545754;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translate(-50%, -50%);
+}
+
+#start-button:hover,
+#history-button:hover {
+    background-color: #444;
+    /* Adjust the color on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%) scale(1.05);
+    /* Add a slight scale on hover */
+}
+
+#start-button,
+#vehicles-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-family: 'Bungee';
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    text-decoration: none;
+    background-color: #545754;
+    border: 2px solid #545754;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#start-button:hover,
+#vehicles-button:hover {
     background-color: #444;
     /* Adjust the color on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
