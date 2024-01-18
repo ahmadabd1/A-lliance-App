@@ -1,8 +1,8 @@
 const API_KEY = "eb1e38d9aa85222a10c2c524d923819f";
 const categoryData = {
-  9: "General Knowledge",
-  10: " Entertainment: Books",
-  12: "Entertainment: Music",
+  21: "Sports",
+  23: "History",
+  28: "Vehicles",
 };
 
 module.exports.API_KEY = API_KEY;
