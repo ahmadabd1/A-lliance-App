@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded', function () {
 function playAudio() {
     var audio = document.getElementById("audioPlayer");
     
-    // Log the current source to the console for debugging
+    
     
 
     audio.style.display = "block";
-    audio.play();
+    audio.pause();
 }
 
 function audioReady() {
+
 }

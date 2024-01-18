@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     startButton.addEventListener("click", function () {
         startingMenu.style.display = "none"; 
         introPage.classList.add("active");
+        audioPlayer.play();
     });
 
     continueButton.addEventListener("click", function () {
