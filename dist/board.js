@@ -149,13 +149,13 @@ class Board {
                 const cell = $(`#square${randomCellId}`);
                 cell.append(questionIcon);
                 this.questionsInCells[randomCellId] = true;
-                this.questionsInCells[2] = true;
-                this.questionsInCells[3] = true;
-                this.questionsInCells[4] = true;
-                this.questionsInCells[5] = true;
-                this.questionsInCells[6] = true;
-                this.questionsInCells[6] = true;
-                this.questionsInCells[7] = true;
+                // this.questionsInCells[2] = true;
+                // this.questionsInCells[3] = true;
+                // this.questionsInCells[4] = true;
+                // this.questionsInCells[5] = true;
+                // this.questionsInCells[6] = true;
+                // this.questionsInCells[6] = true;
+                // this.questionsInCells[7] = true;
             }
         }
     }

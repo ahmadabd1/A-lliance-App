@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         introPage.classList.remove("active");
         gameContainer.style.display = "block"; // Show the game container
         gameContainer.classList.add("active");
+        audioPlayer.pause();
     });
 
     sportsButton.addEventListener("click", function () {
@@ -30,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         introPage.classList.remove("active");
         gameContainer.style.display = "block"; // Show the game container
         gameContainer.classList.add("active");
+        audioPlayer.pause();
     });
 
     historyButton.addEventListener("click", function () {
@@ -37,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
         introPage.classList.remove("active");
         gameContainer.style.display = "block"; // Show the game container
         gameContainer.classList.add("active");
+        audioPlayer.pause();
     });
 
     vehiclesButton.addEventListener("click", function () {
@@ -44,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         introPage.classList.remove("active");
         gameContainer.style.display = "block"; // Show the game container
         gameContainer.classList.add("active");
+        audioPlayer.pause();
     });
     
 
