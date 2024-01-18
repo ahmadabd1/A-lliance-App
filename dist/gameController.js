@@ -20,6 +20,8 @@ class GameController {
         const currentPlayer = this.gameBoard.getCurrentPlayer();
 
         console.log('startTurn called');
+        horseSound.volume = 1.0;
+        horseSound.play();
         if (currentPlayer instanceof Dumbot) {
             console.log('startDumbotTurn called');
             setTimeout(() => {
