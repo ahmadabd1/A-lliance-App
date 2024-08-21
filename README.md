@@ -43,7 +43,7 @@ As you navigate this celestial challenge, immerse yourself in spacey sound effec
 - [Axios](https://axios-http.com/) (Promise-based HTTP client for JavaScript)
 - [npm](https://www.npmjs.com/) (Node Package Manager for managing project dependencies)
 
-## Installation
+### Installation
 
 To start playing AstroGrid, follow these simple steps:
 
