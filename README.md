@@ -11,7 +11,7 @@ As you navigate this celestial challenge, immerse yourself in spacey sound effec
 #### Ready for liftoff? Let's embark on this cosmic adventure together! 🌠
 <br>
 
-## Game Interface Images
+### Game Interface Images
 #### Main Menu
 
 ![Screenshot 2024-06-07 030602](https://github.com/RawabyRahal/A-lliance-App/assets/70092095/0a0124bb-267d-4cef-8d40-2f1ff220e481)
