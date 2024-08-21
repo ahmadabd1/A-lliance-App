@@ -11,7 +11,7 @@ As you navigate this celestial challenge, immerse yourself in spacey sound effec
 #### Ready for liftoff? Let's embark on this cosmic adventure together! 🌠
 <br>
 
-## Game Interface Images
+### Game Interface Images
 #### Main Menu
 
 ![Screenshot 2024-06-07 030602](https://github.com/RawabyRahal/A-lliance-App/assets/70092095/0a0124bb-267d-4cef-8d40-2f1ff220e481)
@@ -25,25 +25,25 @@ As you navigate this celestial challenge, immerse yourself in spacey sound effec
 ![Screenshot 2024-06-07 030647](https://github.com/RawabyRahal/A-lliance-App/assets/70092095/b6b949d4-64e4-4edd-b8d9-846384848734)
 
 
-## ⚙️ Technologies Used
+### ⚙️ Technologies Used
 
-### Frontend
+#### Frontend
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) (Hypertext Markup Language)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) (Cascading Style Sheets)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (JS)
 
-### Backend
+#### Backend
 - [Express](https://expressjs.com/) (Node.js web application framework)
 - [Mongoose](https://mongoosejs.com/) (Object Data Modeling library for MongoDB and Node.js)
 
-### Database
+#### Database
 - [MongoDB](https://www.mongodb.com/) (NoSQL database)
 
-## 🛠️ Tools and Libraries
+### 🛠️ Tools and Libraries
 - [Axios](https://axios-http.com/) (Promise-based HTTP client for JavaScript)
 - [npm](https://www.npmjs.com/) (Node Package Manager for managing project dependencies)
 
-## Installation
+### Installation
 
 To start playing AstroGrid, follow these simple steps:
 
@@ -60,20 +60,20 @@ To start playing AstroGrid, follow these simple steps:
    ```bash
    npm install
 
-## Running the Application 🚀
+### Running the Application 🚀
 
 1. **Start the backend server**:
    
    ```bash
    node server.js
-
-### Note:
+#### Note:
 Make sure you have MongoDB installed and running on your system. The backend server will attempt to connect to MongoDB using the default URL `mongodb://127.0.0.1:27017/AllianceDB`. If your MongoDB instance is running on a different port or requires authentication, you may need to modify the MongoDB connection URI in your backend code.
 
 2. **Access the application**:
  
    ```bash
    Open your web browser and navigate to `http://localhost:8585`
+<br>
 
 ### Enjoy playing AstroGrid! 🌟
 
