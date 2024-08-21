@@ -27,7 +27,7 @@ As you navigate this celestial challenge, immerse yourself in spacey sound effec
 
 ### ⚙️ Technologies Used
 
-### Frontend
+#### Frontend
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) (Hypertext Markup Language)
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) (Cascading Style Sheets)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (JS)
