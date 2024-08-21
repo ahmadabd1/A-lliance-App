@@ -60,7 +60,7 @@ To start playing AstroGrid, follow these simple steps:
    ```bash
    npm install
 
-## Running the Application 🚀
+### Running the Application 🚀
 
 1. **Start the backend server**:
    
