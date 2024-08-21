@@ -32,11 +32,11 @@ As you navigate this celestial challenge, immerse yourself in spacey sound effec
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) (Cascading Style Sheets)
 - [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) (JS)
 
-### Backend
+#### Backend
 - [Express](https://expressjs.com/) (Node.js web application framework)
 - [Mongoose](https://mongoosejs.com/) (Object Data Modeling library for MongoDB and Node.js)
 
-### Database
+#### Database
 - [MongoDB](https://www.mongodb.com/) (NoSQL database)
 
 ## 🛠️ Tools and Libraries
