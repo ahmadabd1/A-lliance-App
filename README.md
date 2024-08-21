@@ -25,7 +25,7 @@ As you navigate this celestial challenge, immerse yourself in spacey sound effec
 ![Screenshot 2024-06-07 030647](https://github.com/RawabyRahal/A-lliance-App/assets/70092095/b6b949d4-64e4-4edd-b8d9-846384848734)
 
 
-## ⚙️ Technologies Used
+### ⚙️ Technologies Used
 
 ### Frontend
 - [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) (Hypertext Markup Language)
