@@ -66,7 +66,7 @@ To start playing AstroGrid, follow these simple steps:
    
    ```bash
    node server.js
-      #### Note:
+#### Note:
       Make sure you have MongoDB installed and running on your system. The backend server will attempt to connect to MongoDB using the default URL `mongodb://127.0.0.1:27017/AllianceDB`. If your MongoDB instance is running on a different port or requires authentication, you may need to modify the MongoDB connection URI in your backend code.
 
 2. **Access the application**:
