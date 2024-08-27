@@ -1,4 +1,4 @@
-# AstroGrid 🚀🌌
+# AstroGrid
 
 #### Welcome to AstroGrid, where you and a friend rocket through space on a cosmic game board!
 
