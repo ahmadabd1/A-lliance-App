@@ -50,7 +50,7 @@ To start playing AstroGrid, follow these simple steps:
 1. **Clone the repository**:
    
    ```bash
-   git clone  https://github.com/RawabyRahal/A-lliance-App.git
+   git clone https://github.com/ahmadabd1/A-lliance-App.git
 
 2. Navigate to the project directory:
     ```bash
